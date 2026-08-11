@@ -357,17 +357,17 @@ Note
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following expressions generates the integer vector 1, 2, 3, 4, 5?</p>
-<div id="webex-27907a8936229ba2f1e720a60f557a10" class="webex-checkboxgroup" data-answer="aQcVABtQFAgfBm8=">
-<label><input type="checkbox" autocomplete="off" name="27907a8936229ba2f1e720a60f557a10"><span><code>seq(1, 5, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="27907a8936229ba2f1e720a60f557a10"><span><code>rep(1, 5, 1)</code></span></label><label><input type="checkbox" autocomplete="off" name="27907a8936229ba2f1e720a60f557a10"><span><code>1:5</code></span></label><label><input type="checkbox" autocomplete="off" name="27907a8936229ba2f1e720a60f557a10"><span><code>seq(0, 4, 1) + 1</code></span></label><label><input type="checkbox" autocomplete="off" name="27907a8936229ba2f1e720a60f557a10"><span><code>rep(1, 5, 5)</code></span></label>
+<div id="webex-8564d9a2a87e0ec9ef93fbc3ca087f6d" class="webex-checkboxgroup" data-answer="YwQaBEgJTQNNCWo=">
+<label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>rep(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(1, 5, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>1:5</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(0, 4, 1) + 1</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
 <ul>
-<li>Wrong. This command will return a length-one vector containing only 1.</li>
+<li>Correct.</li>
+<li>Wrong. This command will return a sequence of five 1s.</li>
 <li>Wrong. This command will return a length-one vector containing only 1.</li>
 <li>Correct.</li>
 <li>Correct.</li>
-<li>Wrong. This command will return a length-25 vector that repeats the integers from 1 to 5 five times.</li>
 </ul>
 </div>
 </div>
@@ -376,8 +376,8 @@ Note
 <p>What is the value of <code>a * b</code>, given the following vectors?</p>
 <p><span class="math display">\[
 \begin{align*}
-a &amp;= 2, 5, 3\\
-b &amp;= 5, 4, 2
+a &amp;= 4, 2, 3\\
+b &amp;= 1, 2, 5
 \end{align*}
 \]</span></p>
 <ul>
@@ -385,32 +385,32 @@ b &amp;= 5, 4, 2
 <li>Separate each element with a comma and a space.</li>
 <li>Incorrectly formatted answers won’t be recognized as correct</li>
 </ul>
-<p><input class="webex-solveme" id="webex-ec233b605d27c462dae2b0311466bcde" size="20" data-answer="PkEDAx9CBAAZRAQVPg=="></p>
+<p><input class="webex-solveme" id="webex-63f066953ab503cabdcb4bae042a123e" size="20" data-answer="bRFSHBYCFRUCVEBo"></p>
 </div>
 <div class="webex-solution">
-<p>The <code>a * b</code> implements element-wise multiplication, so the result is 10, 20, 6.</p>
+<p>The <code>a * b</code> implements element-wise multiplication, so the result is 4, 4, 15.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><code>a &lt;- 1:6</code> and <code>b &lt;- 1:2</code> are two vectors. When you run <code>a + b</code>, R recycles the elements of <code>b</code> without printing a warning. Why doesn’t R warn you in this case?</p>
-<div id="webex-8549b16e9b381aadd973350a8eb97aca" class="webex-radiogroup" data-answer="YwUYCU4BGlQVUm4=">
-<label><input type="radio" autocomplete="off" name="8549b16e9b381aadd973350a8eb97aca"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label><label><input type="radio" autocomplete="off" name="8549b16e9b381aadd973350a8eb97aca"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label><label><input type="radio" autocomplete="off" name="8549b16e9b381aadd973350a8eb97aca"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="8549b16e9b381aadd973350a8eb97aca"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2), so every element of <code>b</code> gets used the same number of times, with nothing left over.</span></label><label><input type="radio" autocomplete="off" name="8549b16e9b381aadd973350a8eb97aca"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label>
+<div id="webex-8441500b250c4bd0b2e0df65af6eaea6" class="webex-radiogroup" data-answer="YwQYABkAHFIeBW0=">
+<label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2), so every element of <code>b</code> gets used the same number of times, with nothing left over.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>R only warns about recycling when the shorter vector’s length does <em>not</em> evenly divide the longer vector’s length — in those cases, at least one “leftover” element gets used a different number of times than the rest, which is often a sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the shorter vector is reused the same number of times, so R treats it as intentional and stays silent.</p>
+<p>R only warns about recycling when the shorter vector’s length does <em>not</em> evenly divide the longer vector’s length. In those cases, at least one “leftover” element gets used a different number of times than the rest, which is often a sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the shorter vector is reused the same number of times, so R treats it as intentional and stays silent.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following best describes why <code>1</code>, <code>1L</code>, and <code>TRUE</code> can all live together in the same numeric vector, but <code>1</code> and <code>"1"</code> cannot live together in a numeric vector?</p>
-<div id="webex-8fdc76ad30ed77e51b7ad5d5648fbfac" class="webex-radiogroup" data-answer="Y1ZIUxsGTVUfADg=">
-<label><input type="radio" autocomplete="off" name="8fdc76ad30ed77e51b7ad5d5648fbfac"><span>R vectors can mix any types freely, so both examples would work identically.</span></label><label><input type="radio" autocomplete="off" name="8fdc76ad30ed77e51b7ad5d5648fbfac"><span>R vectors can only ever hold one single value, so this comparison doesn’t apply.</span></label><label><input type="radio" autocomplete="off" name="8fdc76ad30ed77e51b7ad5d5648fbfac"><span>Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.</span></label><label><input type="radio" autocomplete="off" name="8fdc76ad30ed77e51b7ad5d5648fbfac"><span>All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.</span></label><label><input type="radio" autocomplete="off" name="8fdc76ad30ed77e51b7ad5d5648fbfac"><span><code>"1"</code> is not valid R syntax, so it’s not a fair comparison.</span></label>
+<div id="webex-91e093b8d0970414ee068d0b7ac4e0f2" class="webex-radiogroup" data-answer="YgFJABUDTghIAWQ=">
+<label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>R vectors can mix any types freely, so both examples would work identically.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>R vectors can only ever hold one single value, so this comparison doesn’t apply.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span><code>"1"</code> is not valid R syntax, so it’s not a fair comparison.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Every element in an atomic vector must share the same mode. R will automatically convert (coerce) values to a common, compatible mode when needed — <code>TRUE</code> can become <code>1</code> without any real loss of information, since logicals and numbers are both fundamentally numeric under the hood. But converting <code>1</code> to <code>"1"</code> changes what the value fundamentally <em>is</em> (a number vs.&nbsp;a piece of text), which is why mixing numeric and character values forces the whole vector to become character.</p>
+<p>Every element in an atomic vector must share the same mode. R will automatically convert (coerce) values to a common, compatible mode when needed: <code>TRUE</code> can become <code>1</code> without any real loss of information, since logicals and numbers are both fundamentally numeric under the hood. But converting <code>1</code> to <code>"1"</code> changes what the value fundamentally <em>is</em> (a number vs.&nbsp;a piece of text), which is why mixing numeric and character values forces the whole vector to become character.</p>
 </div>
 </div>
 </div>
