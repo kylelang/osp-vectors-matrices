@@ -1,0 +1,171 @@
+---
+title: "Matrix Operations"
+---
+
+::: {.callout-note}
+Running matrix arithmetic is Apply; explaining *why* recycling behaves the way
+it does with matrices (a direct extension of what you learned with vectors) is Understand.
+:::
+
+```{r, echo = FALSE, include = FALSE}
+set.seed(235711)
+```
+
+## Size
+
+The `length()` function works with matrices, but the results may not be that interesting. When applied to matrices, `length()` returns the number of cells in the matrix.
+
+```{r}
+(m1 <- matrix(1:9, 3, 3))
+length(m1)
+```
+
+To get the dimensions of the matrix, we use `dim()`.
+
+```{r}
+dim(m1)
+```
+
+## Arithmetic
+
+As with vectors, default arithmetic with R matrices works *element-wise*. R performs the requested operation on each pair of corresponding entries in the two matrices. 
+
+```{r}
+(m2 <- matrix(sample(-5:5, 9, TRUE), 3, 3))
+
+m1 + m2
+m2 - m1
+m1 / m2
+m1 * m2
+```
+
+## Matrix Algebra
+
+If you're familiar with matrix algebra and/or have some affinity for programming languages that overload their operators, the matrix arithmetic described above may seem very strange. Rather than overloading the standard operators, R defines special functions for matrix algebraic operations. For example:
+
+- `%*%`: Multiplication
+- `t()`: Transposition
+- `solve()`: Inversion
+
+```{r}
+# Multiply m1 and m2 using true matrix multiplication
+m1 %*% m2
+
+# Transpose m1
+t(m1)
+
+# Invert m2
+solve(m2)
+```
+
+## Recycling
+
+Matrices usually obey R's recycling rules — the same rules you already learned for vectors. If you attempt to perform arithmetic between a matrix and a vector that has fewer elements than the matrix, R will try to make the lengths match by recycling the elements from the vector.
+
+```{r, warning = TRUE}
+v1 <- 1:3
+v2 <- 1:2
+
+# Recycling the elements of 'v1' without a warning
+m1 + v1
+m1 * v1
+
+# Recycling the elements of 'v2' with a warning
+m1 + v2
+m1 * v2
+
+# Use recycling to fill a new matrix
+matrix(42, 2, 2)
+matrix(1:4, 4, 4)
+matrix(1:3, 4, 4)
+
+# Use recycling to match replacement values to all selected elements
+m2[1:2, 3] <- -99
+m2
+
+m2[3, 1:2] <- c(88, 99)
+m2
+```
+
+Sometimes, R won't apply recycling to accommodate our sloppiness, though. For example, we can't do any arithmetic with matrices that have different dimensions.
+
+```{r, error = TRUE}
+(m3 <- matrix(c(1, 3), 2, 1))
+m1 + m3
+m1 * m3
+```
+
+We also can't do arithmetic between a matrix and vector that contains *more* elements than the matrix.
+
+```{r, error = TRUE}
+v3 <- 1:18
+m1 + v3
+m1 * v3
+```
+
+When it comes to overwriting matrix elements, R is especially picky about what size of vector it will use to overwrite a selection of matrix elements.
+
+- OK
+   - Replacement length = Selection length
+   - Replacement length cleanly divides selection length
+- Not OK
+   - Replacement length > Selection length
+      - Still true when replacement length is a multiple of selection length
+   - Replacement length *does not* cleanly divide the selection length
+
+```{r, error = TRUE}
+# Works: Replace 4 elements with length-4 vector
+m1[1:2, 2:3] <- 1:4
+m1
+
+# Works: Replace 4 elements with length-2 vector
+m1[1:2, 2:3] <- 1:2
+m1
+
+# Works: Replace 4 elements with length-1 vector
+m1[1:2, 2:3] <- 42
+m1
+
+# Fails: Replace 4 elements with length-3 vector (3 does not divide 4 evenly)
+m1[1:2, 2:3] <- 1:3
+
+# Fails: Replace 4 elements with length-8 vector (8 is bigger than the selection)
+m1[1:2, 2:3] <- 1:8
+```
+
+::: practice
+
+## Practice
+
+1. Create a 5x3 numeric matrix called 'myMat' wherein each column is equal to the vector 1:5.
+1. Multiply each entry in 'myMat' by pi (i.e., the mathematical constant).
+
+:::: {.panel-tabset}
+
+## {{< var tab_title.editor >}}
+
+```{webr-r}
+
+```
+
+## {{< var tab_title.hint >}}
+
+HINT: The built-in R object `pi` contains the value of pi.
+
+## {{< var tab_title.solution >}}
+
+```{r}
+(myMat <- matrix(1:5, 5, 3))
+
+myMat * pi
+```
+
+::::
+
+:::
+
+## Quick Check
+
+- Why does `m1 + v1` recycle silently, while `m1 + v2` recycles with a warning? What's the underlying rule?
+- When replacing matrix elements, why does R accept a replacement vector whose length "cleanly divides" the
+  selection length, but reject other length mismatches?

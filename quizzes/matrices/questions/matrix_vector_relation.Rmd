@@ -1,0 +1,27 @@
+Question
+========
+Which of the following statements most accurately describes the relationship between an R matrix and an R vector?
+
+Answerlist
+----------
+* A matrix is a vector that has a `dim` attribute telling R to treat it as having rows and columns; removing that
+  attribute turns the matrix back into an ordinary vector.
+* A matrix and a vector are completely unrelated object types that happen to share some function names.
+* A vector is a special case of a matrix that always has exactly one column.
+* Matrices store their data in a fundamentally different way from vectors, using rows and columns instead of a
+  single sequence of values.
+* A matrix is a list containing one vector per column.
+
+Solution
+========
+A matrix's underlying data is stored exactly like a vector's — a single, flat sequence of same-typed values. What
+makes it a matrix is the addition of a `dim` attribute that tells R how to interpret that flat sequence as having
+rows and columns. You can convert a vector to a matrix by adding a `dim` attribute, and convert a matrix back to a
+vector by removing it, without touching the underlying data at all.
+
+Meta-information
+================
+exname: Matrix Vector Relationship
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

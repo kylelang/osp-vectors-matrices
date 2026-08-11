@@ -1,0 +1,26 @@
+---
+title: "Knowledge Quiz: Matrices"
+---
+
+::: {.column-margin}
+
+:::: {.callout-note}
+- Click the check-mark button to check your answer.
+- Click the question-mark button to see an explanation of the solution.
+::::
+
+:::
+
+```{r matrices_quiz}
+#| echo: FALSE
+#| results: "asis"
+
+exams2forms::exams2forms(
+  file = list(
+    "create_matrix.Rmd",
+    "sub_matrix.Rmd",
+    "matrix_vector_relation.Rmd"
+  ),
+  edir = here::here("quizzes", "matrices", "questions")
+)
+```

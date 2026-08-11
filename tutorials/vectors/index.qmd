@@ -1,0 +1,26 @@
+---
+title: "Vectors"
+---
+
+::: {.callout-note}
+
+## Learning Outcomes
+
+By the end of this tutorial, you will be able to:
+
+- **Describe** the characteristics of atomic vectors and their role in R's data system. 
+- **Describe** the six atomic vector modes. 
+- **Generate** new atomic vectors using various functions. 
+- **Perform** element-wise arithmetic and logical operations on atomic vectors, and **explain** how recycling works.
+  
+- **Select and modify** elements in a vector. 
+
+:::
+
+Vectors are the simplest data structure in R: scalars don't exist in R. A vector is simply an ordered collection of
+values with the same type (e.g., all numbers, all character strings, or all boolean values).
+
+Whenever you're working with R, you're almost always using vectors, whether you realize it or not. Vectors are very
+simple objects, but the more complex objects you'll encounter later in this module (matrices, and in the next module,
+lists and data frames) are all built from vectors. Getting comfortable with vectors now pays off throughout the rest
+of your R journey.

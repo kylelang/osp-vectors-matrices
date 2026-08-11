@@ -1,0 +1,117 @@
+---
+title: "Atomic Modes"
+---
+
+::: {.callout-note}
+This page is about recognizing and describing categories, not writing code.
+:::
+
+Vectors in R are essentially dimensionless sequences of homogeneously typed elements. These elements can have one of
+six types, called *atomic modes*.
+
+1. Numeric/Double
+1. Integer
+1. Complex
+1. Logical
+1. Character
+1. Raw
+
+The first three types represent different types of numeric data, while the last three types represent different types of
+non-numeric data. It's important to note that all the elements in a given vector must have the same type.
+
+## Numeric/Double
+
+::: {.column-margin}
+
+:::: {.callout-note}
+R's numeric mode is equivalent to a double-precision floating point value.
+::::
+
+:::
+
+*Numeric* vectors store real numbers (e.g., 6.01, 0.04, -42.1, 1.0). The numeric mode is the default type for numbers in
+R, so if we store a number in an object without specifying otherwise, the type of that object will be numeric (even if
+the value is a whole number). 
+
+```{r}
+v1 <- vector("numeric", 3)
+v1
+
+v1 <- vector("double", 3)
+v1
+```
+
+## Integer
+
+::: {.column-margin}
+
+:::: {.callout-note}
+R's integer mode is equivalent to a signed long integer.
+::::
+
+:::
+
+The *integer* type represents whole numbers (e.g., 1, 100, -5, 0). While integers and numeric (double) values may look
+similar, they are distinct types in R. Integers are used when exact whole-number representation is needed. They can also
+offer slight computational advantages in terms of memory usage and performance, especially when working with large datasets.
+
+```{r}
+v2 <- vector("integer", 3)
+v2
+```
+
+## Complex
+
+The *complex* type represents complex numbers (e.g., $3.0 + 4.1i$, $-0.2 + 8.01i$, $3.1 - 27.0i$). In R, complex numbers
+are written with an `i` to indicate the imaginary unit, like `1+2i` or `0-3.5i`. 
+
+```{r}
+v3 <- vector("complex",3)
+v3
+```
+
+## Logical
+
+*Logical* vectors store boolean values (i.e., true, false). Logical vectors can only contain the values `TRUE` or `FALSE`.
+
+```{r}
+v4 <- vector("logical", 3)
+v4
+```
+
+## Character
+
+::: {.column-margin}
+
+:::: {.callout-note}
+R doesn't have separate string and character types: any string-like data is represented via character vectors.
+::::
+
+:::
+
+The *character* type is used to represent text. Character vectors contain strings, which are sequences of characters
+enclosed in quotation marks (e.g., "foo", "bar", "alice & bob", "42", "FALSE").
+
+```{r}
+v4 <- vector("character", 3)
+v4
+```
+
+## Raw
+
+The *raw* type represents raw bytes of data, typically used for low-level operations. This type is rarely used in typical
+data analyses.
+
+```{r}
+v6 <- vector("raw", 3)
+v6
+```
+
+## Quick Check
+
+- Which two atomic modes both represent numbers, but differ in whether they can store decimal values?
+- If you tried to put `1`, `"two"`, and `TRUE` in the same vector, what would happen? (Try it and see if your
+  prediction matches.)
+
+```{webr-r}
+```

@@ -1,0 +1,59 @@
+---
+title: "Vectors & Matrices"
+page-navigation: false
+format:
+  html: 
+    toc: false
+---
+
+```{r, echo = FALSE, include = FALSE}
+source(here::here("R", "buttons.R"))
+```
+
+::: {.callout-tip}
+
+## ⏱ Estimated Time to Complete
+
+**About 90–120 minutes**, including practice exercises and both knowledge quizzes.
+
+:::
+
+In this module, we'll cover two of R's most fundamental data structures: **vectors** and **matrices**. These
+structures form the foundation of nearly every data manipulation and data analysis workflow in R and everything
+else you'll encounter later in other modules (lists, data frames, factors) is either built out of vectors or behaves
+according to rules you first learn here. Understanding vectors and matrices thoroughly now will make everything that
+follows easier.
+
+Content is split into two tutorials:
+
+1. [Vectors](/tutorials/vectors/index.qmd)
+1. [Matrices](/tutorials/matrices/index.qmd)
+
+## Learning Goals
+
+After completing this module, you will be able to:
+
+### Vectors
+
+1. Describe the characteristics of atomic vectors, and explain their fundamental role in the R data system.
+1. Describe the six atomic vector modes (logical, integer, double, character, complex, raw).
+1. Generate new atomic vectors using various functions.
+1. Perform element-wise arithmetic and logical operations on atomic vectors, and explain how recycling works.
+1. Select and modify elements in a vector.
+
+### Matrices
+
+1. Describe the characteristics of an R matrix. 
+1. Explain the relationship between matrices and vectors. 
+1. Create new matrices in R.
+1. Perform element-wise operations on matrices. 
+1. Explain how recycling works with matrix operations. 
+1. Select and modify the elements of a matrix.
+
+Click the button below to get started with the first tutorial.
+
+```{r}
+#| echo: false
+#| results: asis
+begin_button("/tutorials/vectors/index.html")
+```

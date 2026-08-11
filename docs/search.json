@@ -1,0 +1,664 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vectors & Matrices",
+    "section": "",
+    "text": "⏱ Estimated Time to Complete\n\n\n\nAbout 90–120 minutes, including practice exercises and both knowledge quizzes.\nIn this module, we’ll cover two of R’s most fundamental data structures: vectors and matrices. These structures form the foundation of nearly every data manipulation and data analysis workflow in R and everything else you’ll encounter later in other modules (lists, data frames, factors) is either built out of vectors or behaves according to rules you first learn here. Understanding vectors and matrices thoroughly now will make everything that follows easier.\nContent is split into two tutorials:",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-goals",
+    "href": "index.html#learning-goals",
+    "title": "Vectors & Matrices",
+    "section": "Learning Goals",
+    "text": "Learning Goals\nAfter completing this module, you will be able to:\n\nVectors\n\nDescribe the characteristics of atomic vectors, and explain their fundamental role in the R data system.\nDescribe the six atomic vector modes (logical, integer, double, character, complex, raw).\nGenerate new atomic vectors using various functions.\nPerform element-wise arithmetic and logical operations on atomic vectors, and explain how recycling works.\nSelect and modify elements in a vector.\n\n\n\nMatrices\n\nDescribe the characteristics of an R matrix.\nExplain the relationship between matrices and vectors.\nCreate new matrices in R.\nPerform element-wise operations on matrices.\nExplain how recycling works with matrix operations.\nSelect and modify the elements of a matrix.\n\nClick the button below to get started with the first tutorial.\n\n\n Begin Tutorial",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "quizzes/matrices/questions/sub_matrix.html",
+    "href": "quizzes/matrices/questions/sub_matrix.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following expressions will convert matrix \\(a\\) into matrix \\(b\\)?\n\\[\n\\begin{align*}\na &= \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4 \\\\\n5 & 6 \\\\\n\\end{bmatrix}\n\\\\\nb &= \\begin{bmatrix}\n1 & 2 \\\\\n3 & 5 \\\\\n4 & 6 \\\\\n\\end{bmatrix}\n\\end{align*}\n\\]\n\n\n\na[c(2, 3), c(1, 2)] &lt;- c(3, 4, 5, 6)\na[c(2, 3), c(1, 2)] &lt;- 3:6\na[c(2, 3), ] &lt;- c(3, 4, 5, 6)\na[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2)\na[c(2, 3), c(1, 2)] &lt;- c(4, 5)\na[c(2, 3), c(1, 2)] &lt;- 4:5\na[2, 3] &lt;- c(4, 5)\na[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2, byrow = TRUE)\na[c(3, 5), ] &lt;- c(4, 5)"
+  },
+  {
+    "objectID": "quizzes/matrices/questions/sub_matrix.html#answerlist",
+    "href": "quizzes/matrices/questions/sub_matrix.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "a[c(2, 3), c(1, 2)] &lt;- c(3, 4, 5, 6)\na[c(2, 3), c(1, 2)] &lt;- 3:6\na[c(2, 3), ] &lt;- c(3, 4, 5, 6)\na[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2)\na[c(2, 3), c(1, 2)] &lt;- c(4, 5)\na[c(2, 3), c(1, 2)] &lt;- 4:5\na[2, 3] &lt;- c(4, 5)\na[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2, byrow = TRUE)\na[c(3, 5), ] &lt;- c(4, 5)"
+  },
+  {
+    "objectID": "quizzes/matrices/questions/sub_matrix.html#answerlist-1",
+    "href": "quizzes/matrices/questions/sub_matrix.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\nCorrect.\nCorrect.\nCorrect.\nCorrect.\nWrong. This command will produce \\[\\begin{bmatrix} 1 & 2 \\\\ 4 & 4 \\\\ 5 & 5 \\\\ \\end{bmatrix}\\]\nWrong. This command will produce \\[\\begin{bmatrix} 1 & 2 \\\\ 4 & 4 \\\\ 5 & 5 \\\\ \\end{bmatrix}\\]\nWrong. This command will produce an error since we’re trying to overwrite columns that don’t exist.\nWrong. This command will produce \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will produce an error since we’re trying to overwrite rows that don’t exist."
+  },
+  {
+    "objectID": "quizzes/matrices/questions/matrix_vector_relation.html",
+    "href": "quizzes/matrices/questions/matrix_vector_relation.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following statements most accurately describes the relationship between an R matrix and an R vector?\n\n\n\nA matrix is a vector that has a dim attribute telling R to treat it as having rows and columns; removing that attribute turns the matrix back into an ordinary vector.\nA matrix and a vector are completely unrelated object types that happen to share some function names.\nA vector is a special case of a matrix that always has exactly one column.\nMatrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.\nA matrix is a list containing one vector per column."
+  },
+  {
+    "objectID": "quizzes/matrices/questions/matrix_vector_relation.html#answerlist",
+    "href": "quizzes/matrices/questions/matrix_vector_relation.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "A matrix is a vector that has a dim attribute telling R to treat it as having rows and columns; removing that attribute turns the matrix back into an ordinary vector.\nA matrix and a vector are completely unrelated object types that happen to share some function names.\nA vector is a special case of a matrix that always has exactly one column.\nMatrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.\nA matrix is a list containing one vector per column."
+  },
+  {
+    "objectID": "quizzes/vectors/questions/mode_coercion.html",
+    "href": "quizzes/vectors/questions/mode_coercion.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following best describes why 1, 1L, and TRUE can all live together in the same numeric vector, but 1 and \"1\" cannot live together in a numeric vector?\n\n\n\nAll elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.\nR vectors can only ever hold one single value, so this comparison doesn’t apply.\nNumbers and logicals are actually the same type in R, while text is stored completely separately from vectors.\n\"1\" is not valid R syntax, so it’s not a fair comparison.\nR vectors can mix any types freely, so both examples would work identically."
+  },
+  {
+    "objectID": "quizzes/vectors/questions/mode_coercion.html#answerlist",
+    "href": "quizzes/vectors/questions/mode_coercion.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.\nR vectors can only ever hold one single value, so this comparison doesn’t apply.\nNumbers and logicals are actually the same type in R, while text is stored completely separately from vectors.\n\"1\" is not valid R syntax, so it’s not a fair comparison.\nR vectors can mix any types freely, so both examples would work identically."
+  },
+  {
+    "objectID": "quizzes/vectors/questions/recycling_concept.html",
+    "href": "quizzes/vectors/questions/recycling_concept.html",
+    "title": "Question",
+    "section": "",
+    "text": "a &lt;- 1:6 and b &lt;- 1:2 are two vectors. When you run a + b, R recycles the elements of b without printing a warning. Why doesn’t R warn you in this case?\n\n\n\nBecause the length of a (6) is evenly divisible by the length of b (2), so every element of b gets used the same number of times, with nothing left over.\nBecause a and b are both integer vectors.\nBecause R only warns about recycling when the shorter vector has exactly one element.\nBecause addition never triggers recycling warnings, unlike other arithmetic operators.\nBecause b was created using : instead of c()."
+  },
+  {
+    "objectID": "quizzes/vectors/questions/recycling_concept.html#answerlist",
+    "href": "quizzes/vectors/questions/recycling_concept.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "Because the length of a (6) is evenly divisible by the length of b (2), so every element of b gets used the same number of times, with nothing left over.\nBecause a and b are both integer vectors.\nBecause R only warns about recycling when the shorter vector has exactly one element.\nBecause addition never triggers recycling warnings, unlike other arithmetic operators.\nBecause b was created using : instead of c()."
+  },
+  {
+    "objectID": "quizzes/vectors/index.html",
+    "href": "quizzes/vectors/index.html",
+    "title": "Knowledge Quiz: Vectors",
+    "section": "",
+    "text": "Note\n\n\n\n\nClick the check-mark button to check your answer.\nClick the question-mark button to see an explanation of the solution.\n\n\n\n\n\n\nWhich of the following expressions generates the integer vector 1, 2, 3, 4, 5?\n\nseq(1, 5, 5)rep(1, 5, 1)1:5seq(0, 4, 1) + 1rep(1, 5, 5)\n\n\n\n\nWrong. This command will return a length-one vector containing only 1.\nWrong. This command will return a length-one vector containing only 1.\nCorrect.\nCorrect.\nWrong. This command will return a length-25 vector that repeats the integers from 1 to 5 five times.\n\n\n\n\n\nWhat is the value of a * b, given the following vectors?\n\\[\n\\begin{align*}\na &= 2, 5, 3\\\\\nb &= 5, 4, 2\n\\end{align*}\n\\]\n\nFormat you answer as element1, element2, element3, ...\nSeparate each element with a comma and a space.\nIncorrectly formatted answers won’t be recognized as correct\n\n\n\n\nThe a * b implements element-wise multiplication, so the result is 10, 20, 6.\n\n\n\n\na &lt;- 1:6 and b &lt;- 1:2 are two vectors. When you run a + b, R recycles the elements of b without printing a warning. Why doesn’t R warn you in this case?\n\nBecause b was created using : instead of c().Because addition never triggers recycling warnings, unlike other arithmetic operators.Because a and b are both integer vectors.Because the length of a (6) is evenly divisible by the length of b (2), so every element of b gets used the same number of times, with nothing left over.Because R only warns about recycling when the shorter vector has exactly one element.\n\n\n\nR only warns about recycling when the shorter vector’s length does not evenly divide the longer vector’s length — in those cases, at least one “leftover” element gets used a different number of times than the rest, which is often a sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the shorter vector is reused the same number of times, so R treats it as intentional and stays silent.\n\n\n\n\nWhich of the following best describes why 1, 1L, and TRUE can all live together in the same numeric vector, but 1 and \"1\" cannot live together in a numeric vector?\n\nR vectors can mix any types freely, so both examples would work identically.R vectors can only ever hold one single value, so this comparison doesn’t apply.Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.\"1\" is not valid R syntax, so it’s not a fair comparison.\n\n\n\nEvery element in an atomic vector must share the same mode. R will automatically convert (coerce) values to a common, compatible mode when needed — TRUE can become 1 without any real loss of information, since logicals and numbers are both fundamentally numeric under the hood. But converting 1 to \"1\" changes what the value fundamentally is (a number vs. a piece of text), which is why mixing numeric and character values forces the whole vector to become character.\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Knowledge Quiz"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_selection.html",
+    "href": "tutorials/matrices/matrix_selection.html",
+    "title": "Manipulating Matrices",
+    "section": "",
+    "text": "Note\n\n\n\nSelecting and modifying matrix elements is a hands-on, procedural skill, directly extending what you already practiced with vectors.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Manipulating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_selection.html#accessing-matrix-elements",
+    "href": "tutorials/matrices/matrix_selection.html#accessing-matrix-elements",
+    "title": "Manipulating Matrices",
+    "section": "Accessing Matrix Elements",
+    "text": "Accessing Matrix Elements\nAs with vectors, we can access and assign values within a matrix using the square brackets operator, [], but with one key difference: matrices require two indices, one to define the row selection and one to define the column selection.\n\n(m1 &lt;- matrix(1:12, 3, 4))\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\n# Select the first two rows and the first three columns, then print the selected\n# elements as a matrix\nm1[1:2, 1:3]\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n\n# Select the first and third rows and second and third column, then save the\n# selection as a new matrix called `m2`\n(m2 &lt;- m1[c(1, 3), 2:3])\n\n     [,1] [,2]\n[1,]    4    7\n[2,]    6    9",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Manipulating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_selection.html#modifying-matrix-elements",
+    "href": "tutorials/matrices/matrix_selection.html#modifying-matrix-elements",
+    "title": "Manipulating Matrices",
+    "section": "Modifying Matrix Elements",
+    "text": "Modifying Matrix Elements\nEditing the value of matrix elements works the same way it did for vectors. We , use the [] operator to select the values we want to overwrite, and assign new values for the selected elements using the ordinary assignment operator, &lt;-.\n\n(m3 &lt;- matrix(1, 3, 3))\n\n     [,1] [,2] [,3]\n[1,]    1    1    1\n[2,]    1    1    1\n[3,]    1    1    1\n\n# Replace the element in the first row and second column with 33\nm3[1, 2] &lt;- 33\nm3\n\n     [,1] [,2] [,3]\n[1,]    1   33    1\n[2,]    1    1    1\n[3,]    1    1    1\n\n# Replace all elements in the range covered by the second and third rows and the\n# first and third columns with 44 \nm3[2:3, c(1, 3)] &lt;- 44\nm3\n\n     [,1] [,2] [,3]\n[1,]    1   33    1\n[2,]   44    1   44\n[3,]   44    1   44\n\n\n\n\n\n\n\n\nPractice: Predict, Then Run\n\n\n\nGiven m1 &lt;- matrix(1:12, 3, 4) (already defined above), predict what m1[, 2] will return before running it. Pay attention to whether the result is a matrix or a plain vector.\n\n Question Solution\n\n\n\nm1[, 2]\n\n\n\n\nm1[, 2]\n\n[1] 4 5 6\n\n\nLeaving the row index blank (m1[, 2]) tells R to select all rows, restricted to column 2. Notice that R returns a plain vector here, not a one-column matrix — by default, R “drops” a dimension when a selection only has one column (or one row). We’ll see this same behavior again with data frames in the next module.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Manipulating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_selection.html#quick-check",
+    "href": "tutorials/matrices/matrix_selection.html#quick-check",
+    "title": "Manipulating Matrices",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nWhat’s the difference between m1[1, ] and m1[, 1]?\nWhy does selecting a single row or column from a matrix return a plain vector instead of a matrix?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nReady to Continue?\n\n\n\nYou’ve now completed the Vectors & Matrices module. You’re ready to move on if you can:\n\nExplain what makes a matrix “just a vector with a dim attribute.”\nCreate a matrix with matrix(), and predict whether it fills by row or by column.\nApply arithmetic to matrices and predict when recycling will happen silently vs. with a warning.\nSelect and modify matrix elements using row and column indices.\n\nIf any of these still feel shaky, revisit the relevant page above, or try the Knowledge Quiz to pinpoint exactly where to focus. Once you’re ready, head to the Conclusion page to find this module’s hand-in assignment.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Manipulating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_creation.html",
+    "href": "tutorials/matrices/matrix_creation.html",
+    "title": "Creating Matrices",
+    "section": "",
+    "text": "Note\n\n\n\nCreating matrices is procedural, but understanding why a matrix is “just a vector with a dim attribute” is conceptual, and it’s the single most important idea on this page.\nThe most direct way to create a new matrix is the matrix() function.\n(m1 &lt;- matrix(data = 1, nrow = 3, ncol = 3))\n\n     [,1] [,2] [,3]\n[1,]    1    1    1\n[2,]    1    1    1\n[3,]    1    1    1\nIf we inspect the object, we’ll see it now has an attribute, dim. The attribute dim is a two element vector, in which the first element shows the number of rows and the second element the number of columns.\n# Create a numeric vector for comparison\ny1 &lt;- c(1, 2, 3)\n\n# Basic vectors don't have attributes\nattributes(y1)\n\nNULL\n\n# Matrices must have at least a 'dim' attribute\nattributes(m1)\n\n$dim\n[1] 3 3",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Creating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_creation.html#the-matrixvector-relation",
+    "href": "tutorials/matrices/matrix_creation.html#the-matrixvector-relation",
+    "title": "Creating Matrices",
+    "section": "The Matrix/Vector Relation",
+    "text": "The Matrix/Vector Relation\nI’m not being facetious when I say that a matrix is just a vector with a dim attribute. In fact, we can convert a vector to a matrix simply by adding a dim attribute to the vector.\n\n# y1 is an ordinary numeric vector\nclass(y1)\n\n[1] \"numeric\"\n\nis.vector(y1)\n\n[1] TRUE\n\nis.matrix(y1)\n\n[1] FALSE\n\n# m1 is a matrix (which is a special case of an 'array')\nclass(m1)\n\n[1] \"matrix\" \"array\" \n\nis.vector(m1)\n\n[1] FALSE\n\nis.matrix(m1)\n\n[1] TRUE\n\n# Add a 'dim' attribute to y1\nattr(y1, \"dim\") &lt;- c(3, 1)\n\n# Now, y1 looks like a 3x1 matrix\ny1\n\n     [,1]\n[1,]    1\n[2,]    2\n[3,]    3\n\n# Indeed, y1 is now a matrix, as far as R is concerned\nclass(y1)\n\n[1] \"matrix\" \"array\" \n\nattributes(y1)\n\n$dim\n[1] 3 1\n\nis.vector(y1)\n\n[1] FALSE\n\nis.matrix(y1)\n\n[1] TRUE\n\n\nSimilarly, we can convert a matrix to a vector by removing the dim attribute from the matrix.\n\n# Setting the 'dim' attribute of m1 to NULL effectively removes that attribute\nattr(m1, \"dim\") &lt;- NULL\n\n# Now, m1 looks like a vector\nm1\n\n[1] 1 1 1 1 1 1 1 1 1\n\n# And R agrees: m1 is now a vector, not a matrix\nclass(m1)\n\n[1] \"numeric\"\n\nis.vector(m1)\n\n[1] TRUE\n\nis.matrix(m1)\n\n[1] FALSE",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Creating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_creation.html#element-ordering",
+    "href": "tutorials/matrices/matrix_creation.html#element-ordering",
+    "title": "Creating Matrices",
+    "section": "Element Ordering",
+    "text": "Element Ordering\nBy default, R fills matrices column-wise (i.e., using column-major order): the first column is filled top to bottom, then the second column, and so on.\n\nmatrix(1:9, 3, 3)\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\n\nIf we want to fill the matrix row-by-row instead (i.e., using row-major order), we can use the byrow = TRUE argument.\n\nmatrix(1:9, 3, 3, byrow = TRUE)\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\n\n\n\n\nPractice: Predict, Then Run\n\n\n\nGiven 1:6, predict what matrix(1:6, nrow = 2, ncol = 3) will look like before running it, then check yourself.\n\n Question Solution\n\n\n\nmatrix(1:6, nrow = 2, ncol = 3)\n\n\n\n\nmatrix(1:6, nrow = 2, ncol = 3)\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\nSince R fills column-by-column by default, 1 and 2 fill the first column, 3 and 4 fill the second column, and 5 and 6 fill the third column.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Creating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_creation.html#quick-check",
+    "href": "tutorials/matrices/matrix_creation.html#quick-check",
+    "title": "Creating Matrices",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nIn one sentence, explain what makes an R matrix different from an ordinary vector, structurally.\nIf you remove a matrix’s dim attribute, what do you get back?\nDoes R fill a new matrix by row or by column, by default?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Creating Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/index.html",
+    "href": "tutorials/vectors/index.html",
+    "title": "Vectors",
+    "section": "",
+    "text": "Learning Outcomes\n\n\n\nBy the end of this tutorial, you will be able to:\n\nDescribe the characteristics of atomic vectors and their role in R’s data system.\nDescribe the six atomic vector modes.\nGenerate new atomic vectors using various functions.\nPerform element-wise arithmetic and logical operations on atomic vectors, and explain how recycling works.\nSelect and modify elements in a vector.\n\n\n\nVectors are the simplest data structure in R: scalars don’t exist in R. A vector is simply an ordered collection of values with the same type (e.g., all numbers, all character strings, or all boolean values).\nWhenever you’re working with R, you’re almost always using vectors, whether you realize it or not. Vectors are very simple objects, but the more complex objects you’ll encounter later in this module (matrices, and in the next module, lists and data frames) are all built from vectors. Getting comfortable with vectors now pays off throughout the rest of your R journey.\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/vector_operations.html",
+    "href": "tutorials/vectors/vector_operations.html",
+    "title": "Vector Operations",
+    "section": "",
+    "text": "Note\n\n\n\nYou’ll perform arithmetic and logical operations on vectors, and you’ll need to be able to explain why R’s recycling rule produces the results it does. The recycling concept in particular is worth understanding, not just executing. It comes up again with matrices and data frames later in this module and the next.\nR vectors are dimensionless objects. Unlike the mathematical column vectors with which you may be familiar, R vectors don’t have rows or columns, but they do have length. We can check the length of a vector using the length() function.\ny &lt;- 1:4\nlength(y)\n\n[1] 4",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Vector Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/vector_operations.html#arithmetic",
+    "href": "tutorials/vectors/vector_operations.html#arithmetic",
+    "title": "Vector Operations",
+    "section": "Arithmetic",
+    "text": "Arithmetic\nArithmetic in R works element-wise when applied to vectors. That is, the requested operation is performed between matched elements of the vectors. In this way, R vectors behave much like arrays do in most other programming languages.\n\n(x &lt;- rep(2, 4))\n\n[1] 2 2 2 2\n\ny + x\n\n[1] 3 4 5 6\n\ny - x\n\n[1] -1  0  1  2\n\ny / x\n\n[1] 0.5 1.0 1.5 2.0\n\ny * x\n\n[1] 2 4 6 8\n\n\n\nRecycling\nIf two vectors involved in an element-wise operation have different lengths, R will recycle the elements of the shorter vector until each element in the longer vector can be matched with an element from the shorter vector.\n\n\n\n\n\n\nPractice\n\n\n\n\n Question Solution\n\n\nCan you see how R is applying recycling to calculate the elements of w?\n\nExplain how the recycling algorithm works in this example.\n\n\nz &lt;- c(1, 2)\nw &lt;- y - z\nw\n\n[1] 0 0 2 2\n\n\n\n\nIn this example, y has four elements, but z has only two. So, R re-uses the two elements in z to define matches for all four elements in y and specify the four differences needed to define the elements of w.\n\n\\(w_1 = y_1 - z_1\\)\n\\(w_2 = y_2 - z_2\\) \\(\\leftarrow\\) After calculating the second difference, we’ve run out of elements in z.\n\\(w_3 = y_3 - z_1\\) \\(\\leftarrow\\) Beginning with the third difference, we start recycling the elements of z.\n\\(w_4 = y_4 - z_2\\)\n\n\n\n\n\n\nIf the length of the longer vector is divisible by the length of the shorter vector, R will recycle silently (i.e., without any messages or warnings). So, you need to vigilant and make sure you don’t accidentally trigger recycling when you don’t want it.\nIn cases where the length of the shorter vector doesn’t evenly divide the length of the longer vector, R will still use execute the requested operation and apply recycling, but it will also return a warning.\n\na &lt;- 1:4\nb &lt;- 1:2\nc &lt;- 1:5\n\na + b # silent recycling\n\n[1] 2 4 4 6\n\na + c # recycling with warning\n\nWarning in a + c: longer object length is not a multiple of shorter object\nlength\n\n\n[1] 2 4 6 8 6\n\n\n\nWhy Recycling is a Useful Feature\nAt this point, if you have any predilection toward strictly typed programming languages, all this recycling business might sound like insanity, but there’s a method to the madness. Let’s consider a few examples that demonstrate how recycling can actually be very helpful in day-to-day programmatic data analysis.\nThe following code looks like it should implement scalar multiplication, and outcome looks like the result of a scalar multiplication. But R doesn’t have scalars, and vector arithmetic in R doesn’t follow standard linear algebraic rules, so our intuitive reading of this expression can’t be correct.\n\n3 * y\n\n[1]  3  6  9 12\n\n\nIn fact, the preceding code is actually doing element-wise multiplication of a length-one vector, 3, and a length-four vector, y, and recycling the elements of the length-one vector to resolve the length difference. In this example, recycling provides two benefits:\n\nWe get to write code that reads like the mathematical representation of the operation we’re trying to implement\nOur code produces the same result as the mathematical operation it appears to represent\n\nThe following three expressions follow the same pattern as the last example but provide more compelling evidence for the real-world usefulness of recycling. These expressions don’t represent valid operations under the conventional rules of linear algebra, and they wouldn’t be valid commands in a highly structure programming language like C. Yet, the intended operations are intuitively obvious, and R will use recycling to execute the operations we expect.\n\ny - 1\n\n[1] 0 1 2 3\n\ny + 3\n\n[1] 4 5 6 7\n\ny / 3\n\n[1] 0.3333333 0.6666667 1.0000000 1.3333333",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Vector Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/vector_operations.html#logical-tests",
+    "href": "tutorials/vectors/vector_operations.html#logical-tests",
+    "title": "Vector Operations",
+    "section": "Logical Tests",
+    "text": "Logical Tests\nLogical comparisons between vectors test some logical relation between the vectors and return a logical vector that encodes the answer to whatever TRUE/FALSE question the logical relation tested. These comparisons follow the same rules as vector arithmetic:\n\nOperators are applied element-wise\nRecycling is used to resolve length differences\n\n\n# Check which elements of y are equal to 4\ny == 4\n\n[1] FALSE FALSE FALSE  TRUE\n\n# Check which elements of y are equal to 4 or 2\ny == 4 | y == 2\n\n[1] FALSE  TRUE FALSE  TRUE\n\n\nWe need to be especially mindful of the vector operation rules when applying logical comparisons to vectors. When defining logical tests, intuition can easily fail us. For example, it would be natural to read the following code as implementing the same test as the previous expression, but the two results are clearly different. Why?\n\ny == c(4, 2)\n\n[1] FALSE  TRUE FALSE FALSE\n\n\nAs you’ve probably surmised, recycling is causing the discrepancy. We can clarify the differences between the two tests by extending the shorter vectors to manually implement recycling.\n\ny == c(4, 4, 4, 4) | y == c(2, 2, 2, 2)\n\n[1] FALSE  TRUE FALSE  TRUE\n\ny == c(4, 2, 4, 2)\n\n[1] FALSE  TRUE FALSE FALSE\n\n\nNow, the two tests don’t appear very similar, and their different outcomes aren’t particularly surprising.\n\n\n\n\n\n\nPractice\n\n\n\n\nCreate the object myVec by running the two lines of code below.\nProgrammatically create a logical vector that indicates which elements of myVec are (strictly) less than 3.\n\n\n Question Solution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nset.seed(235711)\nmyVec &lt;- sample(1:5)\n\ny &lt;- myVec &lt; 3",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Vector Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/vector_operations.html#quick-check",
+    "href": "tutorials/vectors/vector_operations.html#quick-check",
+    "title": "Vector Operations",
+    "section": "Quick Check",
+    "text": "Quick Check\nIn your own words (no code needed):\n\nWhat does it mean for R to “recycle” a vector, and when does it happen?\nWhy does R warn you in some recycling cases but not others?\ny == c(4, 2) and y == 4 | y == 2 look like they should test the same thing, but they don’t. Explain why.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Vector Operations"
+    ]
+  },
+  {
+    "objectID": "in_progress.html",
+    "href": "in_progress.html",
+    "title": "In Progress",
+    "section": "",
+    "text": "Sorry, we’re still building the page you’ve requested.\nIt’s almost done…really.\nWe’re just working through a few minor issues…\n\n\n\nImage Source"
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "Conclusion",
+    "section": "",
+    "text": "By completing this module, you’ve built a solid foundation in understanding two of R’s most fundamental data structures:",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "conclusion.html#hand-in-assignment",
+    "href": "conclusion.html#hand-in-assignment",
+    "title": "Conclusion",
+    "section": "Hand-In Assignment",
+    "text": "Hand-In Assignment\n\n\n\n\n\n\nVectors & Matrices Assignment\n\n\n\nComplete each step below in your own R session, then submit your work (see “What to Hand In” below).\n\nGenerate. Create a vector called temps containing the integer sequence from 60 to 90, in steps of 5 (i.e., 60, 65, 70, …, 90).\nOperate & explain (recycling). Create a second vector called adjust containing the two values -2 and 3. Compute temps + adjust and store the result as adjusted_temps. In a comment, explain in your own words why this produces a length-7 result from a length-7 vector and a length-2 vector, and whether R issued a warning (and why or why not).\nSelect & modify. Using indexing (not retyping the whole vector), replace every value in adjusted_temps that is greater than 80 with the value 80 (i.e., “cap” the temperatures at 80).\nMatrices. Create a 7×2 matrix called temp_matrix where the first column is temps and the second column is adjusted_temps. (Hint: cbind() can combine vectors into the columns of a matrix, or you can build it with matrix() directly — either is fine.)\nConceptual explanation. In a comment, explain in your own words how temp_matrix is related to the two vectors you built it from — specifically, what R is doing “under the hood” that makes a matrix possible.\n\n\nWhat to Hand In\nSave all of your commands, in the order you ran them, in a single plain-text or R script file (e.g. yourname_vectors-matrices.R), including both required comments. Submit the file however your instructor has requested.\nA teacher reviewing your submission should be able to see: correct vector generation, a working (and correctly explained) recycling operation, correct conditional selection/modification, a correctly constructed matrix, and a clear explanation of the vector–matrix relationship in your own words.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "conclusion.html#learning-goals",
+    "href": "conclusion.html#learning-goals",
+    "title": "Conclusion",
+    "section": "Learning Goals",
+    "text": "Learning Goals\nNow that you’ve completed this module, you should be able to:\n\nVectors\n\nDescribe the characteristics of atomic vectors, and explain their fundamental role in the R data system.\nDescribe the six atomic vector modes (logical, integer, double, character, complex, raw).\nGenerate new atomic vectors using various functions.\nPerform element-wise arithmetic and logical operations on atomic vectors, and explain how recycling works.\nSelect and modify elements in a vector.\n\n\n\nMatrices\n\nDescribe the characteristics of an R matrix.\nExplain the relationship between matrices and vectors.\nCreate new matrices in R.\nPerform element-wise operations on matrices.\nExplain how recycling works with matrix operations.\nSelect and modify the elements of a matrix.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "conclusion.html#additional-reading",
+    "href": "conclusion.html#additional-reading",
+    "title": "Conclusion",
+    "section": "Additional Reading",
+    "text": "Additional Reading\nFor more information on the topics we’ve covered in this module, the following chapter from Hadley Wickham’s R for Data Science is an excellent resource.\n\nVectors in the First Edition.\n\n\nAdvanced Reading\nFor a much more technical deep-dive into the topics we’ve covered in this module, check out the following chapter from Hadley Wickham’s Advanced R.\n\nVectors",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "conclusion.html#next-steps",
+    "href": "conclusion.html#next-steps",
+    "title": "Conclusion",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you have a solid grasp of vectors and matrices, you’re ready to move on to other R data structures: lists and data frames, which let you work with mixed-type and tabular data.\n\n\n Next Module",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html",
+    "href": "tutorials/vectors/atomic_modes.html",
+    "title": "Atomic Modes",
+    "section": "",
+    "text": "Note\n\n\n\nThis page is about recognizing and describing categories, not writing code.\nVectors in R are essentially dimensionless sequences of homogeneously typed elements. These elements can have one of six types, called atomic modes.\nThe first three types represent different types of numeric data, while the last three types represent different types of non-numeric data. It’s important to note that all the elements in a given vector must have the same type.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#numericdouble",
+    "href": "tutorials/vectors/atomic_modes.html#numericdouble",
+    "title": "Atomic Modes",
+    "section": "Numeric/Double",
+    "text": "Numeric/Double\n\n\n\n\n\n\n\n\nNote\n\n\n\nR’s numeric mode is equivalent to a double-precision floating point value.\n\n\nNumeric vectors store real numbers (e.g., 6.01, 0.04, -42.1, 1.0). The numeric mode is the default type for numbers in R, so if we store a number in an object without specifying otherwise, the type of that object will be numeric (even if the value is a whole number).\n\nv1 &lt;- vector(\"numeric\", 3)\nv1\n\n[1] 0 0 0\n\nv1 &lt;- vector(\"double\", 3)\nv1\n\n[1] 0 0 0",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#integer",
+    "href": "tutorials/vectors/atomic_modes.html#integer",
+    "title": "Atomic Modes",
+    "section": "Integer",
+    "text": "Integer\n\n\n\n\n\n\n\n\nNote\n\n\n\nR’s integer mode is equivalent to a signed long integer.\n\n\nThe integer type represents whole numbers (e.g., 1, 100, -5, 0). While integers and numeric (double) values may look similar, they are distinct types in R. Integers are used when exact whole-number representation is needed. They can also offer slight computational advantages in terms of memory usage and performance, especially when working with large datasets.\n\nv2 &lt;- vector(\"integer\", 3)\nv2\n\n[1] 0 0 0",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#complex",
+    "href": "tutorials/vectors/atomic_modes.html#complex",
+    "title": "Atomic Modes",
+    "section": "Complex",
+    "text": "Complex\nThe complex type represents complex numbers (e.g., \\(3.0 + 4.1i\\), \\(-0.2 + 8.01i\\), \\(3.1 - 27.0i\\)). In R, complex numbers are written with an i to indicate the imaginary unit, like 1+2i or 0-3.5i.\n\nv3 &lt;- vector(\"complex\",3)\nv3\n\n[1] 0+0i 0+0i 0+0i",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#logical",
+    "href": "tutorials/vectors/atomic_modes.html#logical",
+    "title": "Atomic Modes",
+    "section": "Logical",
+    "text": "Logical\nLogical vectors store boolean values (i.e., true, false). Logical vectors can only contain the values TRUE or FALSE.\n\nv4 &lt;- vector(\"logical\", 3)\nv4\n\n[1] FALSE FALSE FALSE",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#character",
+    "href": "tutorials/vectors/atomic_modes.html#character",
+    "title": "Atomic Modes",
+    "section": "Character",
+    "text": "Character\n\n\n\n\n\n\n\n\nNote\n\n\n\nR doesn’t have separate string and character types: any string-like data is represented via character vectors.\n\n\nThe character type is used to represent text. Character vectors contain strings, which are sequences of characters enclosed in quotation marks (e.g., “foo”, “bar”, “alice & bob”, “42”, “FALSE”).\n\nv4 &lt;- vector(\"character\", 3)\nv4\n\n[1] \"\" \"\" \"\"",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#raw",
+    "href": "tutorials/vectors/atomic_modes.html#raw",
+    "title": "Atomic Modes",
+    "section": "Raw",
+    "text": "Raw\nThe raw type represents raw bytes of data, typically used for low-level operations. This type is rarely used in typical data analyses.\n\nv6 &lt;- vector(\"raw\", 3)\nv6\n\n[1] 00 00 00",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/atomic_modes.html#quick-check",
+    "href": "tutorials/vectors/atomic_modes.html#quick-check",
+    "title": "Atomic Modes",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nWhich two atomic modes both represent numbers, but differ in whether they can store decimal values?\nIf you tried to put 1, \"two\", and TRUE in the same vector, what would happen? (Try it and see if your prediction matches.)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Atomic Modes"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/elements_selection.html",
+    "href": "tutorials/vectors/elements_selection.html",
+    "title": "Manipulating Vectors",
+    "section": "",
+    "text": "Note\n\n\n\nSelecting and modifying vector elements is a hands-on, procedural skill.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Manipulating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/elements_selection.html#accessing-vector-elements",
+    "href": "tutorials/vectors/elements_selection.html#accessing-vector-elements",
+    "title": "Manipulating Vectors",
+    "section": "Accessing Vector Elements",
+    "text": "Accessing Vector Elements\nWe can access specific elements in a vector using the square bracket selection operator, []. To select specific elements, provide an integer vector defining the positions of the desired elements.\n\n# Define some vector\n(y &lt;- letters[1:10])\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\"\n\n# Select the third entry in y\ny[3]\n\n[1] \"c\"\n\n# Select the second through fifth elements of y\ny[2:5]\n\n[1] \"b\" \"c\" \"d\" \"e\"\n\n# Select the fourth, sixth, seventh, and eighth elements of y\ny[c(4, 6, 8, 7)]\n\n[1] \"d\" \"f\" \"h\" \"g\"\n\n# Same as above but combining c() and : \ny[c(4, 6:8)]\n\n[1] \"d\" \"f\" \"g\" \"h\"\n\n\nWhen selecting vector elements, we must use a single vector to index the target elements.\n\ny[2, 3]\n\nError in y[2, 3]: incorrect number of dimensions\n\n\nSpecifying multiple arguments inside [] is reserved for multi-dimensional structures like matrices or data frames and will trigger an error with vectors.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Manipulating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/elements_selection.html#modifying-vector-elements",
+    "href": "tutorials/vectors/elements_selection.html#modifying-vector-elements",
+    "title": "Manipulating Vectors",
+    "section": "Modifying Vector Elements",
+    "text": "Modifying Vector Elements\nAbove, we used the selection operator, [], to extract vector elements, but you shouldn’t think about that operator as a “subsetting operator”. I prefer to think about the selection operator as designating some part of a vector for further processing. In the above examples, the further processing was simply printing the selected elements to the R console, but we can also use the selection operators to modify the designated vector elements.\nWe can overwrite vector elements with new values by selecting the target elements using the [] operator and assigning new values with the ordinary assignment operator, &lt;-.\n\n# Replace the first elements of y with \"bob\"\ny[1] &lt;- \"bob\"\ny\n\n [1] \"bob\" \"b\"   \"c\"   \"d\"   \"e\"   \"f\"   \"g\"   \"h\"   \"i\"   \"j\"  \n\n# Replace the fourth and sixth elements of y with \"foo\" and \"bar\", respectively\ny[c(4, 6)] &lt;- c(\"foo\", \"bar\")\ny\n\n [1] \"bob\" \"b\"   \"c\"   \"foo\" \"e\"   \"bar\" \"g\"   \"h\"   \"i\"   \"j\"  \n\n\nOverwriting vector elements uses ordinary recycling to harmonize the lengths of the selected set of elements and the length of the replacement vector.\n\ny[8:10] &lt;- \"alice\"\ny\n\n [1] \"bob\"   \"b\"     \"c\"     \"foo\"   \"e\"     \"bar\"   \"g\"     \"alice\" \"alice\"\n[10] \"alice\"\n\ny[1:3] &lt;- c(\"hello\", \"world\")\n\nWarning in y[1:3] &lt;- c(\"hello\", \"world\"): number of items to replace is not a\nmultiple of replacement length\n\ny\n\n [1] \"hello\" \"world\" \"hello\" \"foo\"   \"e\"     \"bar\"   \"g\"     \"alice\" \"alice\"\n[10] \"alice\"\n\n## Extra elements in the replacement vector are dropped with a warning\ny[1:4] &lt;- c(\"It\", \"was\", \"the\", \"best\", \"of\", \"times\")\n\nWarning in y[1:4] &lt;- c(\"It\", \"was\", \"the\", \"best\", \"of\", \"times\"): number of\nitems to replace is not a multiple of replacement length\n\ny\n\n [1] \"It\"    \"was\"   \"the\"   \"best\"  \"e\"     \"bar\"   \"g\"     \"alice\" \"alice\"\n[10] \"alice\"\n\n\n\n\n\n\n\n\nPractice\n\n\n\n\nCreate an integer vector called myVec that contains all the whole numbers from 1 to 11.\nUse a single command to replace all the even numbers in myVec with 0.\n\n\n Interactive Editor Solution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nmyVec &lt;- 1:11\nmyVec[seq(2, 10, 2)] &lt;- 0\nmyVec\n\n [1]  1  0  3  0  5  0  7  0  9  0 11",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Manipulating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/elements_selection.html#quick-check",
+    "href": "tutorials/vectors/elements_selection.html#quick-check",
+    "title": "Manipulating Vectors",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nWhat error would you get if you tried y[2, 3] on a vector? Why does that combination of indices only make sense for a multi-dimensional structure?\nIf you assign a replacement vector that’s shorter than your selection, what rule does R use to fill in the rest?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nReady to Continue?\n\n\n\nYou’re ready to move on to Matrices if you can:\n\nName the six atomic vector modes and describe what each stores.\nGenerate a vector using c(), :, seq(), or rep().\nExplain, in your own words, what vector recycling is and why R does it.\nSelect and modify specific elements of a vector using [].\n\nIf any of these still feel shaky, revisit the relevant page above, or try the Knowledge Quiz to pinpoint exactly where to focus.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Manipulating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/generating_vectors.html",
+    "href": "tutorials/vectors/generating_vectors.html",
+    "title": "Generating Vectors",
+    "section": "",
+    "text": "Note\n\n\n\nThis page is hands-on: you’ll write code that generates vectors in several different ways.\nThere are many different ways to generate vectors in R. Some involve combining explicitly specified elements, while others use algorithmic rules to generate value that follow some pattern. Below, we’ll cover some of the most common ways to generate vectors.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Generating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/generating_vectors.html#concatenation",
+    "href": "tutorials/vectors/generating_vectors.html#concatenation",
+    "title": "Generating Vectors",
+    "section": "Concatenation",
+    "text": "Concatenation\nThe concatenation function, c(), constructs a vector by joining its arguments into a single vector.\n\n(y1 &lt;- c(1, 2, 3))\n\n[1] 1 2 3\n\n(y2 &lt;- c(TRUE, FALSE, TRUE, TRUE))\n\n[1]  TRUE FALSE  TRUE  TRUE\n\n(y3 &lt;- c(\"bob\", \"suzy\", \"danny\"))\n\n[1] \"bob\"   \"suzy\"  \"danny\"\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe outer parentheses in these examples are just a handy piece of syntactic sugar. They allow us to assign a value (e.g., c(1, 2, 3) to an object (e.g., y1) and print that object in a single command. You don’t need to use these extra parentheses if you don’t want to print the value of object your creating.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Generating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/generating_vectors.html#generating-sequences",
+    "href": "tutorials/vectors/generating_vectors.html#generating-sequences",
+    "title": "Generating Vectors",
+    "section": "Generating Sequences",
+    "text": "Generating Sequences\nThe colon operator, :, creates a sequence of regularly spaced values between two endpoints. Each element in the resulting vector is separated from it’s neighbors by \\(\\pm\\) 1.\n\n1:5\n\n[1] 1 2 3 4 5\n\n-3:2\n\n[1] -3 -2 -1  0  1  2\n\n1:-2\n\n[1]  1  0 -1 -2\n\n\nThis : operator is primarily intended for creating sequences of whole numbers, but it will also work with decimal-valued arguments, though the results might not be what you’d expect. Notice where the sequence begins and ends in the following example.\n\n\n\n\n\n\nPractice\n\n\n\n\n Question Solution\n\n\nWithout running the code, see if you can generalize what you know about the : operator to answer the following questions.\n\nWhat vector will the following code produce?\nWhat rule is : using to generate this vector?\n\n\n1.2:5.3\n\n\n\nThe resulting vector looks like this:\n\n\n[1] 1.2 2.2 3.2 4.2 5.2\n\n\nThis vector is generated by assigning 1.2 as the first element and then adding 1 to define the next element. Each subsequent element is defined by adding one to the last element until the resulting value exceeds the upper bound we requested (i.e., 5.3). So, the last element in the vector is 5.2, since that’s the largest value that can be generated in unit steps from 1.2 without exceeding 5.3.\n\n\n\n\n\nTo generate regular sequences with non-unit steps between the elements, we can use seq(). The seq() function allows you to specify the step size or the total number of elements in the resulting vector with the by or length.out arguments, respectively.\n\n# Create a numeric vector starting at 0, ending at 1, with elements\n# increasing by steps of 0.25\nseq(from = 0, to = 1, by = 0.25)\n\n[1] 0.00 0.25 0.50 0.75 1.00\n\n# The same as above but omitting the argument names\nseq(0, 1, 0.25)\n\n[1] 0.00 0.25 0.50 0.75 1.00\n\n# Create a numeric vector of 10 evenly spaced values starting at -1 and\n# ending at 1\nseq(-1, 1, length.out = 10)\n\n [1] -1.0000000 -0.7777778 -0.5555556 -0.3333333 -0.1111111  0.1111111\n [7]  0.3333333  0.5555556  0.7777778  1.0000000",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Generating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/generating_vectors.html#repeating-values",
+    "href": "tutorials/vectors/generating_vectors.html#repeating-values",
+    "title": "Generating Vectors",
+    "section": "Repeating Values",
+    "text": "Repeating Values\nThe rep() function creates vectors by repeating it’s first argument as many times as requested.\n\nrep(33, 4)\n\n[1] 33 33 33 33\n\nrep(1:3, 3)\n\n[1] 1 2 3 1 2 3 1 2 3\n\n\nUse the each argument to repeat each element of the first argument each number of times.\n\nrep(y3, each = 2)\n\n[1] \"bob\"   \"bob\"   \"suzy\"  \"suzy\"  \"danny\" \"danny\"\n\n\n\n\n\n\n\n\nPractice\n\n\n\nCreate a numeric vector containing the five even integers from 4 to 12 (inclusive).\n\n Interactive Editor Solution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nWe can use the seq() function to create a sequence from 4 to 12. Using a step size of 2 includes only even values.\n\nseq(4, 12, by = 2)\n\n[1]  4  6  8 10 12",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Generating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/vectors/generating_vectors.html#quick-check",
+    "href": "tutorials/vectors/generating_vectors.html#quick-check",
+    "title": "Generating Vectors",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nWhich function would you use to generate the sequence 2, 4, 6, 8, 10: c(), :, or seq()? Is there more than one right answer?\nWhat does the each argument of rep() do differently from just repeating the whole vector multiple times?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Vectors",
+      "Generating Vectors"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/index.html",
+    "href": "tutorials/matrices/index.html",
+    "title": "Matrices",
+    "section": "",
+    "text": "Learning Outcomes\n\n\n\nBy the end of this tutorial, you will be able to:\n\nDescribe the characteristics of an R matrix, and explain its relationship to vectors.\nCreate new matrices in R.\nPerform element-wise operations on matrices, and explain how recycling applies to matrix operations.\nSelect and modify the elements of a matrix.\n\n\n\nIn R, matrices are a fundamental data structure used to represent two-dimensional collections of homogeneously typed values. Just like vectors, all elements in a matrix must have the same type: one of the six atomic modes. You can think of R matrices as generalizations of R vectors. Matrices are just vectors with a dimension attribute that tells R to interpret matrices as two-dimensional objects with rows and columns.\nThat last point is worth sitting with for a moment: everything you already know about vectors — how they’re typed, how arithmetic works element-wise, how recycling resolves length mismatches — carries over to matrices almost unchanged. The main new idea in this tutorial is simply how R keeps track of rows and columns on top of that familiar vector foundation.\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html",
+    "href": "tutorials/matrices/matrix_operation.html",
+    "title": "Matrix Operations",
+    "section": "",
+    "text": "Note\n\n\n\nRunning matrix arithmetic is Apply; explaining why recycling behaves the way it does with matrices (a direct extension of what you learned with vectors) is Understand.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html#size",
+    "href": "tutorials/matrices/matrix_operation.html#size",
+    "title": "Matrix Operations",
+    "section": "Size",
+    "text": "Size\nThe length() function works with matrices, but the results may not be that interesting. When applied to matrices, length() returns the number of cells in the matrix.\n\n(m1 &lt;- matrix(1:9, 3, 3))\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\nlength(m1)\n\n[1] 9\n\n\nTo get the dimensions of the matrix, we use dim().\n\ndim(m1)\n\n[1] 3 3",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html#arithmetic",
+    "href": "tutorials/matrices/matrix_operation.html#arithmetic",
+    "title": "Matrix Operations",
+    "section": "Arithmetic",
+    "text": "Arithmetic\nAs with vectors, default arithmetic with R matrices works element-wise. R performs the requested operation on each pair of corresponding entries in the two matrices.\n\n(m2 &lt;- matrix(sample(-5:5, 9, TRUE), 3, 3))\n\n     [,1] [,2] [,3]\n[1,]    4    5    4\n[2,]   -1    3   -4\n[3,]    1   -2   -4\n\nm1 + m2\n\n     [,1] [,2] [,3]\n[1,]    5    9   11\n[2,]    1    8    4\n[3,]    4    4    5\n\nm2 - m1\n\n     [,1] [,2] [,3]\n[1,]    3    1   -3\n[2,]   -3   -2  -12\n[3,]   -2   -8  -13\n\nm1 / m2\n\n      [,1]      [,2]  [,3]\n[1,]  0.25  0.800000  1.75\n[2,] -2.00  1.666667 -2.00\n[3,]  3.00 -3.000000 -2.25\n\nm1 * m2\n\n     [,1] [,2] [,3]\n[1,]    4   20   28\n[2,]   -2   15  -32\n[3,]    3  -12  -36",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html#matrix-algebra",
+    "href": "tutorials/matrices/matrix_operation.html#matrix-algebra",
+    "title": "Matrix Operations",
+    "section": "Matrix Algebra",
+    "text": "Matrix Algebra\nIf you’re familiar with matrix algebra and/or have some affinity for programming languages that overload their operators, the matrix arithmetic described above may seem very strange. Rather than overloading the standard operators, R defines special functions for matrix algebraic operations. For example:\n\n%*%: Multiplication\nt(): Transposition\nsolve(): Inversion\n\n\n# Multiply m1 and m2 using true matrix multiplication\nm1 %*% m2\n\n     [,1] [,2] [,3]\n[1,]    7    3  -40\n[2,]   11    9  -44\n[3,]   15   15  -48\n\n# Transpose m1\nt(m1)\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n# Invert m2\nsolve(m2)\n\n            [,1]        [,2]        [,3]\n[1,] 0.161290323 -0.09677419  0.25806452\n[2,] 0.064516129  0.16129032 -0.09677419\n[3,] 0.008064516 -0.10483871 -0.13709677",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html#recycling",
+    "href": "tutorials/matrices/matrix_operation.html#recycling",
+    "title": "Matrix Operations",
+    "section": "Recycling",
+    "text": "Recycling\nMatrices usually obey R’s recycling rules — the same rules you already learned for vectors. If you attempt to perform arithmetic between a matrix and a vector that has fewer elements than the matrix, R will try to make the lengths match by recycling the elements from the vector.\n\nv1 &lt;- 1:3\nv2 &lt;- 1:2\n\n# Recycling the elements of 'v1' without a warning\nm1 + v1\n\n     [,1] [,2] [,3]\n[1,]    2    5    8\n[2,]    4    7   10\n[3,]    6    9   12\n\nm1 * v1\n\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    4   10   16\n[3,]    9   18   27\n\n# Recycling the elements of 'v2' with a warning\nm1 + v2\n\nWarning in m1 + v2: longer object length is not a multiple of shorter object\nlength\n\n\n     [,1] [,2] [,3]\n[1,]    2    6    8\n[2,]    4    6   10\n[3,]    4    8   10\n\nm1 * v2\n\nWarning in m1 * v2: longer object length is not a multiple of shorter object\nlength\n\n\n     [,1] [,2] [,3]\n[1,]    1    8    7\n[2,]    4    5   16\n[3,]    3   12    9\n\n# Use recycling to fill a new matrix\nmatrix(42, 2, 2)\n\n     [,1] [,2]\n[1,]   42   42\n[2,]   42   42\n\nmatrix(1:4, 4, 4)\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    1    1    1\n[2,]    2    2    2    2\n[3,]    3    3    3    3\n[4,]    4    4    4    4\n\nmatrix(1:3, 4, 4)\n\nWarning in matrix(1:3, 4, 4): data length [3] is not a sub-multiple or multiple\nof the number of rows [4]\n\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    1\n[2,]    2    3    1    2\n[3,]    3    1    2    3\n[4,]    1    2    3    1\n\n# Use recycling to match replacement values to all selected elements\nm2[1:2, 3] &lt;- -99\nm2\n\n     [,1] [,2] [,3]\n[1,]    4    5  -99\n[2,]   -1    3  -99\n[3,]    1   -2   -4\n\nm2[3, 1:2] &lt;- c(88, 99)\nm2\n\n     [,1] [,2] [,3]\n[1,]    4    5  -99\n[2,]   -1    3  -99\n[3,]   88   99   -4\n\n\nSometimes, R won’t apply recycling to accommodate our sloppiness, though. For example, we can’t do any arithmetic with matrices that have different dimensions.\n\n(m3 &lt;- matrix(c(1, 3), 2, 1))\n\n     [,1]\n[1,]    1\n[2,]    3\n\nm1 + m3\n\nError in m1 + m3: non-conformable arrays\n\nm1 * m3\n\nError in m1 * m3: non-conformable arrays\n\n\nWe also can’t do arithmetic between a matrix and vector that contains more elements than the matrix.\n\nv3 &lt;- 1:18\nm1 + v3\n\nError: dims [product 9] do not match the length of object [18]\n\nm1 * v3\n\nError: dims [product 9] do not match the length of object [18]\n\n\nWhen it comes to overwriting matrix elements, R is especially picky about what size of vector it will use to overwrite a selection of matrix elements.\n\nOK\n\nReplacement length = Selection length\nReplacement length cleanly divides selection length\n\nNot OK\n\nReplacement length &gt; Selection length\n\nStill true when replacement length is a multiple of selection length\n\nReplacement length does not cleanly divide the selection length\n\n\n\n# Works: Replace 4 elements with length-4 vector\nm1[1:2, 2:3] &lt;- 1:4\nm1\n\n     [,1] [,2] [,3]\n[1,]    1    1    3\n[2,]    2    2    4\n[3,]    3    6    9\n\n# Works: Replace 4 elements with length-2 vector\nm1[1:2, 2:3] &lt;- 1:2\nm1\n\n     [,1] [,2] [,3]\n[1,]    1    1    1\n[2,]    2    2    2\n[3,]    3    6    9\n\n# Works: Replace 4 elements with length-1 vector\nm1[1:2, 2:3] &lt;- 42\nm1\n\n     [,1] [,2] [,3]\n[1,]    1   42   42\n[2,]    2   42   42\n[3,]    3    6    9\n\n# Fails: Replace 4 elements with length-3 vector (3 does not divide 4 evenly)\nm1[1:2, 2:3] &lt;- 1:3\n\nError in m1[1:2, 2:3] &lt;- 1:3: number of items to replace is not a multiple of replacement length\n\n# Fails: Replace 4 elements with length-8 vector (8 is bigger than the selection)\nm1[1:2, 2:3] &lt;- 1:8\n\nError in m1[1:2, 2:3] &lt;- 1:8: number of items to replace is not a multiple of replacement length\n\n\n\n\n\n\n\n\nPractice\n\n\n\n\nCreate a 5x3 numeric matrix called ‘myMat’ wherein each column is equal to the vector 1:5.\nMultiply each entry in ‘myMat’ by pi (i.e., the mathematical constant).\n\n\n Interactive Editor Hint Solution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nHINT: The built-in R object pi contains the value of pi.\n\n\n\n(myMat &lt;- matrix(1:5, 5, 3))\n\n     [,1] [,2] [,3]\n[1,]    1    1    1\n[2,]    2    2    2\n[3,]    3    3    3\n[4,]    4    4    4\n[5,]    5    5    5\n\nmyMat * pi\n\n          [,1]      [,2]      [,3]\n[1,]  3.141593  3.141593  3.141593\n[2,]  6.283185  6.283185  6.283185\n[3,]  9.424778  9.424778  9.424778\n[4,] 12.566371 12.566371 12.566371\n[5,] 15.707963 15.707963 15.707963",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "tutorials/matrices/matrix_operation.html#quick-check",
+    "href": "tutorials/matrices/matrix_operation.html#quick-check",
+    "title": "Matrix Operations",
+    "section": "Quick Check",
+    "text": "Quick Check\n\nWhy does m1 + v1 recycle silently, while m1 + v2 recycles with a warning? What’s the underlying rule?\nWhen replacing matrix elements, why does R accept a replacement vector whose length “cleanly divides” the selection length, but reject other length mismatches?",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Matrix Operations"
+    ]
+  },
+  {
+    "objectID": "quizzes/vectors/questions/multiplication.html",
+    "href": "quizzes/vectors/questions/multiplication.html",
+    "title": "Question",
+    "section": "",
+    "text": "Question\nWhat is the value of a * b, given the following vectors?\n\\[\n\\begin{align*}\na &= 2, 5, 1\\\\\nb &= 2, 3, 1\n\\end{align*}\n\\]\n\nFormat you answer as element1, element2, element3, ...\nSeparate each element with a comma and a space.\nIncorrectly formatted answers won’t be recognized as correct\n\n\n\nSolution\nThe a * b implements element-wise multiplication, so the result is 4, 15, 1.\n\n\nMeta-information\nexname: vector_multiplication extype: string exsolution: 4, 15, 1\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "quizzes/vectors/questions/generation.html",
+    "href": "quizzes/vectors/questions/generation.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following expressions generates the integer vector 1, 2, 3, 4, 5?\n\n\n\n1:5\nseq(1, 5)\nseq(1, 5, 1)\nrep(1:5, 1)\nseq(0, 4, 1) + 1\nseq(1, 5, 5)\nrep(1, 5)\nrep(1, 5, 1)\nrep(1, 5, 5)\nseq(0, 4, 1) - 1"
+  },
+  {
+    "objectID": "quizzes/vectors/questions/generation.html#answerlist",
+    "href": "quizzes/vectors/questions/generation.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "1:5\nseq(1, 5)\nseq(1, 5, 1)\nrep(1:5, 1)\nseq(0, 4, 1) + 1\nseq(1, 5, 5)\nrep(1, 5)\nrep(1, 5, 1)\nrep(1, 5, 5)\nseq(0, 4, 1) - 1"
+  },
+  {
+    "objectID": "quizzes/vectors/questions/generation.html#answerlist-1",
+    "href": "quizzes/vectors/questions/generation.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\nCorrect.\nCorrect.\nCorrect.\nCorrect.\nCorrect.\nWrong. This command will return a length-one vector containing only 1.\nWrong. This command will return a sequence of five 1s.\nWrong. This command will return a length-one vector containing only 1.\nWrong. This command will return a length-25 vector that repeats the integers from 1 to 5 five times.\nWrong. This command will return a length-five vector containing the integers from -1 to 3."
+  },
+  {
+    "objectID": "quizzes/matrices/index.html",
+    "href": "quizzes/matrices/index.html",
+    "title": "Knowledge Quiz: Matrices",
+    "section": "",
+    "text": "Note\n\n\n\n\nClick the check-mark button to check your answer.\nClick the question-mark button to see an explanation of the solution.\n\n\n\n\n\n\nWhich of the following expressions will generate the following matrix?\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n\\end{bmatrix}\n\\]\n\nmatrix(1:6, 2, 3, byrow = TRUE)matrix(1:6, 3, 2, byrow = TRUE)matrix(6, 3, 2)matrix(6, 2, 3)matrix(1:6)\n\n\n\n\nCorrect.\nWrong. This command will return \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 6 & 6 \\\\ 6 & 6 \\\\ 6 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 6 & 6 & 6 \\\\ 6 & 6 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 4 \\\\ 5 \\\\ 6 \\\\ \\end{bmatrix}\\]\n\n\n\n\n\nWhich of the following expressions will convert matrix \\(a\\) into matrix \\(b\\)?\n\\[\n\\begin{align*}\na &= \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4 \\\\\n5 & 6 \\\\\n\\end{bmatrix}\n\\\\\nb &= \\begin{bmatrix}\n1 & 2 \\\\\n3 & 5 \\\\\n4 & 6 \\\\\n\\end{bmatrix}\n\\end{align*}\n\\]\n\na[c(3, 5), ] &lt;- c(4, 5)a[c(2, 3), c(1, 2)] &lt;- c(3, 4, 5, 6)a[2, 3] &lt;- c(4, 5)a[c(2, 3), c(1, 2)] &lt;- c(4, 5)a[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2, byrow = TRUE)\n\n\n\n\nWrong. This command will produce an error since we’re trying to overwrite rows that don’t exist.\nCorrect.\nWrong. This command will produce an error since we’re trying to overwrite columns that don’t exist.\nWrong. This command will produce \\[\\begin{bmatrix} 1 & 2 \\\\ 4 & 4 \\\\ 5 & 5 \\\\ \\end{bmatrix}\\]\nWrong. This command will produce \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ \\end{bmatrix}\\]\n\n\n\n\n\nWhich of the following statements most accurately describes the relationship between an R matrix and an R vector?\n\nA matrix is a vector that has a dim attribute telling R to treat it as having rows and columns; removing that attribute turns the matrix back into an ordinary vector.A vector is a special case of a matrix that always has exactly one column.A matrix and a vector are completely unrelated object types that happen to share some function names.Matrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.A matrix is a list containing one vector per column.\n\n\n\nA matrix’s underlying data is stored exactly like a vector’s — a single, flat sequence of same-typed values. What makes it a matrix is the addition of a dim attribute that tells R how to interpret that flat sequence as having rows and columns. You can convert a vector to a matrix by adding a dim attribute, and convert a matrix back to a vector by removing it, without touching the underlying data at all.\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Matrices",
+      "Knowledge Quiz"
+    ]
+  },
+  {
+    "objectID": "quizzes/matrices/questions/create_matrix.html",
+    "href": "quizzes/matrices/questions/create_matrix.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following expressions will generate the following matrix?\n\\[\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n\\end{bmatrix}\n\\]\n\n\n\nmatrix(1:6, 2, 3, byrow = TRUE)\nmatrix(1:6)\nmatrix(1:6, 2, 3)\nmatrix(1:6, 3, 2)\nmatrix(1:6, 3, 2, byrow = TRUE)\nmatrix(6, 2, 3)\nmatrix(6, 3, 2)"
+  },
+  {
+    "objectID": "quizzes/matrices/questions/create_matrix.html#answerlist",
+    "href": "quizzes/matrices/questions/create_matrix.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "matrix(1:6, 2, 3, byrow = TRUE)\nmatrix(1:6)\nmatrix(1:6, 2, 3)\nmatrix(1:6, 3, 2)\nmatrix(1:6, 3, 2, byrow = TRUE)\nmatrix(6, 2, 3)\nmatrix(6, 3, 2)"
+  },
+  {
+    "objectID": "quizzes/matrices/questions/create_matrix.html#answerlist-1",
+    "href": "quizzes/matrices/questions/create_matrix.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\nCorrect.\nWrong. This command will return \\[\\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 4 \\\\ 5 \\\\ 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 1 & 3 & 5 \\\\ 2 & 4 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 1 & 4 \\\\ 2 & 5 \\\\ 3 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 6 & 6 & 6 \\\\ 6 & 6 & 6 \\\\ \\end{bmatrix}\\]\nWrong. This command will return \\[\\begin{bmatrix} 6 & 6 \\\\ 6 & 6 \\\\ 6 & 6 \\\\ \\end{bmatrix}\\]"
+  }
+]
