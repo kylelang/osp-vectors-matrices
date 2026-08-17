@@ -72,19 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-resource.callout {
-  border-left-color: orange;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgb(from orange r g b / 13%);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f0c1' !important;
-  background-image: none;
-}
 div.callout-reading.callout {
   border-left-color: purple;
 }
@@ -98,19 +85,6 @@ div.callout-reading.callout-style-default .callout-icon::before, div.callout-rea
   content: '\f518' !important;
   background-image: none;
 }
-div.callout-practice.callout {
-  border-left-color: green;
-}
-div.callout-practice.callout-style-default > .callout-header {
-  background-color: rgb(from green r g b / 13%);
-}
-div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f085' !important;
-  background-image: none;
-}
 div.callout-reading-advanced.callout {
   border-left-color: red;
 }
@@ -122,6 +96,32 @@ div.callout-reading-advanced.callout-style-default .callout-icon::before, div.ca
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f518' !important;
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: orange;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgb(from orange r g b / 13%);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-practice.callout {
+  border-left-color: green;
+}
+div.callout-practice.callout-style-default > .callout-header {
+  background-color: rgb(from green r g b / 13%);
+}
+div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f085' !important;
   background-image: none;
 }
 </style>
@@ -357,16 +357,16 @@ Note
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following expressions generates the integer vector 1, 2, 3, 4, 5?</p>
-<div id="webex-8564d9a2a87e0ec9ef93fbc3ca087f6d" class="webex-checkboxgroup" data-answer="YwQaBEgJTQNNCWo=">
-<label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>rep(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(1, 5, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>1:5</code></span></label><label><input type="checkbox" autocomplete="off" name="8564d9a2a87e0ec9ef93fbc3ca087f6d"><span><code>seq(0, 4, 1) + 1</code></span></label>
+<div id="webex-c6048e9ab51faba5628cb211ca5b2d77" class="webex-checkboxgroup" data-answer="OAYcBRRUFVFOBGw=">
+<label><input type="checkbox" autocomplete="off" name="c6048e9ab51faba5628cb211ca5b2d77"><span><code>rep(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="c6048e9ab51faba5628cb211ca5b2d77"><span><code>seq(0, 4, 1) + 1</code></span></label><label><input type="checkbox" autocomplete="off" name="c6048e9ab51faba5628cb211ca5b2d77"><span><code>seq(1, 5, 1)</code></span></label><label><input type="checkbox" autocomplete="off" name="c6048e9ab51faba5628cb211ca5b2d77"><span><code>seq(0, 4, 1) - 1</code></span></label><label><input type="checkbox" autocomplete="off" name="c6048e9ab51faba5628cb211ca5b2d77"><span><code>rep(1:5, 1)</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
 <ul>
-<li>Correct.</li>
 <li>Wrong. This command will return a sequence of five 1s.</li>
-<li>Wrong. This command will return a length-one vector containing only 1.</li>
 <li>Correct.</li>
+<li>Correct.</li>
+<li>Wrong. This command will return a length-five vector containing the integers from -1 to 3.</li>
 <li>Correct.</li>
 </ul>
 </div>
@@ -376,8 +376,8 @@ Note
 <p>What is the value of <code>a * b</code>, given the following vectors?</p>
 <p><span class="math display">\[
 \begin{align*}
-a &amp;= 4, 2, 3\\
-b &amp;= 1, 2, 5
+a &amp;= 4, 1, 2\\
+b &amp;= 3, 1, 5
 \end{align*}
 \]</span></p>
 <ul>
@@ -385,17 +385,17 @@ b &amp;= 1, 2, 5
 <li>Separate each element with a comma and a space.</li>
 <li>Incorrectly formatted answers won’t be recognized as correct</li>
 </ul>
-<p><input class="webex-solveme" id="webex-63f066953ab503cabdcb4bae042a123e" size="20" data-answer="bRFSHBYCFRUCVEBo"></p>
+<p><input class="webex-solveme" id="webex-6d8226a9265db6fb63eeb90cab38e904" size="20" data-answer="bUYJAB4WUBUSBwVGPw=="></p>
 </div>
 <div class="webex-solution">
-<p>The <code>a * b</code> implements element-wise multiplication, so the result is 4, 4, 15.</p>
+<p>The <code>a * b</code> implements element-wise multiplication, so the result is 12, 1, 10.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><code>a &lt;- 1:6</code> and <code>b &lt;- 1:2</code> are two vectors. When you run <code>a + b</code>, R recycles the elements of <code>b</code> without printing a warning. Why doesn’t R warn you in this case?</p>
-<div id="webex-8441500b250c4bd0b2e0df65af6eaea6" class="webex-radiogroup" data-answer="YwQYABkAHFIeBW0=">
-<label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2), so every element of <code>b</code> gets used the same number of times, with nothing left over.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="8441500b250c4bd0b2e0df65af6eaea6"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label>
+<div id="webex-c10e8e26ebdb96e6b49a2cfc78d0ba45" class="webex-radiogroup" data-answer="OAEcVRRVHgdJUjk=">
+<label><input type="radio" autocomplete="off" name="c10e8e26ebdb96e6b49a2cfc78d0ba45"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="c10e8e26ebdb96e6b49a2cfc78d0ba45"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label><label><input type="radio" autocomplete="off" name="c10e8e26ebdb96e6b49a2cfc78d0ba45"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label><label><input type="radio" autocomplete="off" name="c10e8e26ebdb96e6b49a2cfc78d0ba45"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2), so every element of <code>b</code> gets used the same number of times, with nothing left over.</span></label><label><input type="radio" autocomplete="off" name="c10e8e26ebdb96e6b49a2cfc78d0ba45"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -405,8 +405,8 @@ b &amp;= 1, 2, 5
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following best describes why <code>1</code>, <code>1L</code>, and <code>TRUE</code> can all live together in the same numeric vector, but <code>1</code> and <code>"1"</code> cannot live together in a numeric vector?</p>
-<div id="webex-91e093b8d0970414ee068d0b7ac4e0f2" class="webex-radiogroup" data-answer="YgFJABUDTghIAWQ=">
-<label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>R vectors can mix any types freely, so both examples would work identically.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>R vectors can only ever hold one single value, so this comparison doesn’t apply.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span><code>"1"</code> is not valid R syntax, so it’s not a fair comparison.</span></label><label><input type="radio" autocomplete="off" name="91e093b8d0970414ee068d0b7ac4e0f2"><span>All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.</span></label>
+<div id="webex-c06595225d53a4eb69998941e48cd376" class="webex-radiogroup" data-answer="OAEaBRUFHgIZVGg=">
+<label><input type="radio" autocomplete="off" name="c06595225d53a4eb69998941e48cd376"><span>All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.</span></label><label><input type="radio" autocomplete="off" name="c06595225d53a4eb69998941e48cd376"><span>R vectors can only ever hold one single value, so this comparison doesn’t apply.</span></label><label><input type="radio" autocomplete="off" name="c06595225d53a4eb69998941e48cd376"><span>Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.</span></label><label><input type="radio" autocomplete="off" name="c06595225d53a4eb69998941e48cd376"><span><code>"1"</code> is not valid R syntax, so it’s not a fair comparison.</span></label><label><input type="radio" autocomplete="off" name="c06595225d53a4eb69998941e48cd376"><span>R vectors can mix any types freely, so both examples would work identically.</span></label>
 </div>
 </div>
 <div class="webex-solution">

@@ -43,12 +43,9 @@ Complete each step below in your own R session, then submit your work (see "What
 ### What to Hand In
 
 Save all of your commands, in the order you ran them, in a single plain-text or R script file (e.g.
-`yourname_vectors-matrices.R`), including both required comments. Submit the file however your instructor has
-requested.
+`yourname_vectors-matrices.R`), including both required comments. 
 
-A teacher reviewing your submission should be able to see: correct vector generation, a working (and correctly
-explained) recycling operation, correct conditional selection/modification, a correctly constructed matrix, and a
-clear explanation of the vector–matrix relationship in your own words.
+A teacher reviewing your submission should be able to see: correct vector generation, a working (and correctly explained) recycling operation, correct conditional selection/modification, a correctly constructed matrix, and a clear explanation of the vector–matrix relationship in your own words.
 
 :::
 
