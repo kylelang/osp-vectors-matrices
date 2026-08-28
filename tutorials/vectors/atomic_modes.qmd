@@ -3,7 +3,9 @@ title: "Atomic Modes"
 ---
 
 ::: {.callout-note}
+
 This page is about recognizing and describing categories, not writing code.
+
 :::
 
 Vectors in R are essentially dimensionless sequences of homogeneously typed elements. These elements can have one of
@@ -24,14 +26,14 @@ non-numeric data. It's important to note that all the elements in a given vector
 ::: {.column-margin}
 
 :::: {.callout-note}
+
 R's numeric mode is equivalent to a double-precision floating point value.
+
 ::::
 
 :::
 
-*Numeric* vectors store real numbers (e.g., 6.01, 0.04, -42.1, 1.0). The numeric mode is the default type for numbers in
-R, so if we store a number in an object without specifying otherwise, the type of that object will be numeric (even if
-the value is a whole number). 
+*Numeric* vectors store real numbers (e.g., 6.01, 0.04, -42.1, 1.0).
 
 ```{r}
 v1 <- vector("numeric", 3)
@@ -46,14 +48,15 @@ v1
 ::: {.column-margin}
 
 :::: {.callout-note}
+
 R's integer mode is equivalent to a signed long integer.
+
 ::::
 
 :::
 
 The *integer* type represents whole numbers (e.g., 1, 100, -5, 0). While integers and numeric (double) values may look
-similar, they are distinct types in R. Integers are used when exact whole-number representation is needed. They can also
-offer slight computational advantages in terms of memory usage and performance, especially when working with large datasets.
+similar, they are distinct types in R. Integers are used when exact whole-number representation is needed.
 
 ```{r}
 v2 <- vector("integer", 3)
@@ -84,7 +87,9 @@ v4
 ::: {.column-margin}
 
 :::: {.callout-note}
+
 R doesn't have separate string and character types: any string-like data is represented via character vectors.
+
 ::::
 
 :::
@@ -99,19 +104,21 @@ v4
 
 ## Raw
 
-The *raw* type represents raw bytes of data, typically used for low-level operations. This type is rarely used in typical
-data analyses.
+The *raw* type represents raw bytes of data, typically used for low-level operations. This type is rarely used in
+typical data analyses.
 
 ```{r}
 v6 <- vector("raw", 3)
 v6
 ```
 
-## Quick Check
+::: knowledge-check
 
 - Which two atomic modes both represent numbers, but differ in whether they can store decimal values?
-- If you tried to put `1`, `"two"`, and `TRUE` in the same vector, what would happen? (Try it and see if your
-  prediction matches.)
+- If you tried to put `1`, `"two"`, and `TRUE` in the same vector, what would happen?
+   - Try it and see if your prediction matches.
 
 ```{webr-r}
 ```
+
+:::
