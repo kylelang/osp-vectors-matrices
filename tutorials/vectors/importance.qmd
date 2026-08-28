@@ -1,0 +1,166 @@
+---
+title: "The Role of Vectors"
+---
+
+::: going-further
+
+The information on this page is largely option extra detail about the role that vectors play in the overall design
+philosophy of R. Understanding these concepts will help you make sense of the more complex types of objects that you'll
+encounter in later modules. These ideas can also be helpful when you're trying to figure out why R is doing some
+confusing nonsense that you didn't expect. All that being said, however, you do not need to master these concepts to
+progress to the next tutorial.
+
+:::
+
+Before we proceed to more complex types of data objects, let's take a moment to consider the unique role that vectors
+play in R's design philosophy. In particular, we should address two questions.
+
+1. What makes vectors "atomic" data types?
+1. Why should you care about vectors?
+
+## How are Vectors Atomic?
+
+R vectors are "atomic" in two ways.
+
+1. Vectors are irreducible.
+1. Vectors are homogeneous.
+
+### Irreducibility
+
+As we briefly mentioned on the first page of this tutorial, vectors are the simplest data type in R. So, there is no
+such thing as a true scalar in R. By the standards of most programming languages, that's very strange. In R, any single
+value with one of the six atomic modes is a length-one vector. So, as far as R is concerned the following expressions do
+not represent numbers, logical values, or character strings: they're all different flavors of vectors.
+
+```{r}
+3.14
+1+2i
+TRUE
+"foo"
+```
+
+```{r}
+typeof(3.14)
+typeof(1+2i)
+typeof(TRUE)
+typeof("foo")
+```
+
+```{r}
+length(3.14)
+length(1+2i)
+length(TRUE)
+length("foo")
+```
+
+```{r}
+is.vector(3.14)
+is.vector(1+2i)
+is.vector(TRUE)
+is.vector("foo")
+```
+
+So, regardless of how differently we may perceive the following two objects, R will view and treat them both in exactly
+the same way.
+
+```{r}
+#| echo: false
+
+"foo"
+tail(letters, 15)
+```
+
+For most of your day-to-day R programming and data analysis, the technical distinction between a scalar and a length-one
+vector won't matter. Sometimes, however, remember that vectors act as R's most elemental building blocks can help you
+understand the behavior of more complex objects (e.g., lists and data frames).
+
+### Homogeneity
+
+We briefly addressed the homogeneity of vectors in the [Atomic Modes](/tutorials/vectors/atomic_modes.qmd) section, but
+the concept is worth revisiting. When we say that vectors are homogeneous, we mean a vector can only contain one type of
+data. Hopefully, that restriction seems obvious when you consider that vectors are the simplest possible type of object
+in R. If vectors could store different types of data, we'd need some simpler type of object to represent the pieces of
+heterogeneous data we want to store in our vector. Ergo, since there's nothing simpler than a vector, vectors must
+contain only one type of data.
+
+Considering the draconian restrictions on vector types, it may surprise you to learn that the following code is
+perfectly legal and won't cause any errors. We're attempting to concatenating a length-one numeric vector, a length-one
+logical vector, and a length-one character vector into a single length-three vector. Why does that work?
+
+```{r}
+c(1, FALSE, "foo")
+```
+
+When you try to combine heterogeneous data into a single vector, R will automatically convert the types of some elements
+to produce a legal atomic vector. In the example above, the only way to resolve the type discrepancy was to enquote each
+element and return a character vector.
+
+In the following example, R was able to resolve the type discrepancy with a less drastic conversion. Merely converting
+`FALSE` to `0` and returning a numeric vector was enough.
+
+```{r}
+c(1, 2, FALSE)
+```
+
+Note that R will almost always honor quotes, and won't automatically convert character strings to any other type, even
+when as sensible conversion may seem obvious.
+
+```{r}
+c("1", 2, FALSE)
+c("1", 2, 3)
+c("TRUE", FALSE, FALSE)
+```
+
+We can trigger the same automatic type casting by carelessly overwriting vector elements. For example, in the following
+code, the logical value `TRUE` that we attempt to assign to the fourth slot in `x` is automatically converted to the
+integer `1` to conform to the atomic mode of `x`.
+
+```{r}
+(x <- 1:5)
+x[4] <- TRUE
+x
+```
+
+Conversely, in the example below, when we try to assign the numeric value `1` to the second slot in the logical vector
+`y`, R automatically converts `y` to a numeric vector to accommodate the new data. 
+
+```{r}
+(y <- rep(c(TRUE, FALSE), 3))
+y[2] <- 1
+y
+```
+
+## Why Care?
+
+At this point, you've probably been more-or-less inundated with vector-related information, and it might not be clear
+why you should care about such a simple type of data object. After all, you're not going to use vectors to store your
+research data.
+
+Actually, that's pretty much correct: you won't use atomic vectors for much in the way of storing useful, interesting
+data. However, you will use vectors more than any other type of data object in R. 
+
+::: knowledge-check
+
+- What is the simplest type of data object that R recognizes?
+- In terms of R's type system, how would you describe this object: `"foo"`?
+- What type of vector would the following command return `c(FALSE, TRUE, "bob")`?
+
+```{webr-r}
+```
+
+:::
+
+::: {.callout-tip}
+
+## Ready to Continue?
+
+You're ready to move on to [Matrices](/tutorials/matrices/index.qmd) if you can:
+
+- Name the six atomic vector modes, and describe what type of data each mode stores.
+- Generate vectors using `c()`, `:`, `seq()`, and `rep()`.
+- Explain, in your own words, what recycling is, when it happens, and why it can be useful.
+- Select and modify specific elements of a vector using `[]`.
+
+Take the [Knowledge Quiz](/quizzes/vectors/index.qmd) to check your learning.
+
+:::
