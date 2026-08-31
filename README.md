@@ -1,3 +1,3 @@
-# Data Types
+# Vectors & Matrices
 
-This repository holds the materials for the OSP Data Types module.
+This repository holds the materials for the OSP Vectors & Matrices module.
