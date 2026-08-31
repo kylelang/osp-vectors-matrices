@@ -1,5 +1,6 @@
 Question
 ========
+
 Which of the following expressions will convert matrix $a$ into matrix $b$?
 
 $$
@@ -20,6 +21,7 @@ $$
 
 Answerlist
 ----------
+
 * `a[c(2, 3), c(1, 2)] <- c(3, 4, 5, 6)`
 * `a[c(2, 3), c(1, 2)] <- 3:6`
 * `a[c(2, 3), ] <- c(3, 4, 5, 6)`
@@ -35,6 +37,7 @@ Solution
 
 Answerlist
 ----------
+
 * Correct.
 * Correct.
 * Correct.
@@ -47,6 +50,7 @@ Answerlist
 
 Meta-information
 ================
+
 exname: sub_matrix
 extype: mchoice
 exsolution: 111100000

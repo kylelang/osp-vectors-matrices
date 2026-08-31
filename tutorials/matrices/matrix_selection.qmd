@@ -2,56 +2,46 @@
 title: "Manipulating Matrices"
 ---
 
-::: {.callout-note}
-Selecting and modifying matrix elements is a hands-on, procedural skill, directly extending
-what you already practiced with vectors.
-:::
-
 ## Accessing Matrix Elements
 
-As with vectors, we can access and assign values within a matrix using the square brackets operator, `[]`, but with one key difference: matrices require two indices, one to define the row selection and one to define the column selection.
+As with vectors, we can access and assign values within a matrix using the square brackets operator, `[]`, but with one
+key difference. Matrices require two indices, one to define the row selection and one to define the column selection.
 
 ```{r}
 (m1 <- matrix(1:12, 3, 4))
-
-# Select the first two rows and the first three columns, then print the selected
-# elements as a matrix
-m1[1:2, 1:3]
-
-# Select the first and third rows and second and third column, then save the
-# selection as a new matrix called `m2`
-(m2 <- m1[c(1, 3), 2:3])
 ```
 
-## Modifying Matrix Elements
 
-Editing the value of matrix elements works the same way it did for vectors. We , use the `[]` operator to select the values we want to overwrite, and assign new values for the selected elements using the ordinary assignment operator,
-`<-`.
+
+Select the first two rows and the first three columns of `m1`, then print the selected elements as a matrix.
 
 ```{r}
-(m3 <- matrix(1, 3, 3))
+m1[1:2, 1:3]
+```
 
-# Replace the element in the first row and second column with 33
-m3[1, 2] <- 33
-m3
 
-# Replace all elements in the range covered by the second and third rows and the
-# first and third columns with 44 
-m3[2:3, c(1, 3)] <- 44
-m3
+Select the first and third rows and the second and third columns of `m1`, then save the selection as a new matrix called
+`m2`
+
+```{r}
+(m2 <- m1[c(1, 3), 2:3])
 ```
 
 ::: practice
 
-## Practice: Predict, Then Run
+Consider the following matrix.
 
-Given `m1 <- matrix(1:12, 3, 4)` (already defined above), predict what `m1[, 2]` will return before running it. Pay attention to whether the result is a matrix or a plain vector.
+```{r}
+(m1 <- matrix(1:12, 3, 4))
+``` 
+
+**Predict** what `m1[, 2]` will return.
 
 :::: {.panel-tabset}
-## {{< var tab_title.question >}}
 
-```{r, eval = FALSE}
-m1[, 2]
+## {{< var tab_title.editor >}}
+
+```{webr-r}
 ```
 
 ## {{< var tab_title.solution >}}
@@ -60,32 +50,263 @@ m1[, 2]
 m1[, 2]
 ```
 
-Leaving the row index blank (`m1[, 2]`) tells R to select *all* rows, restricted to column 2. Notice that R returns a plain vector here, not a one-column matrix — by default, R "drops" a dimension when a selection only has one column (or one row). We'll see this same behavior again with data frames in the next module.
+Leaving the row index blank (`m1[, 2]`) tells R to select *all* rows. By specifying `2` for the column index, we're
+telling R to select the second column. So, we extract all three elements from the second column.
+
+Notice that R returns a plain vector here, not a one-column matrix. By default, R "drops" a dimension when a selection
+only has one column (or one row). We'll come back to this idea when we discuss subsetting data frames in the [**Lists &
+Data Frames**](https://openstatprog.com/lists-data-frames/) module.
+
 ::::
 
 :::
 
-## Quick Check
+## Modifying Matrix Elements
 
-- What's the difference between `m1[1, ]` and `m1[, 1]`?
-- Why does selecting a single row or column from a matrix return a plain vector instead of a matrix?
+Editing the value of matrix elements works the same way that it did for vectors. We, use the `[]` operator to select
+the values we want to overwrite, and then we assign new values for the selected elements using the ordinary assignment
+operator, `<-`.
+
+```{r}
+(m3 <- matrix(1, 3, 3))
+```
+
+
+Replace the element in the first row and second column of `m3` with 33.
+
+```{r}
+m3[1, 2] <- 33
+m3
+```
+
+Replace all elements in the range covered by the second and third rows and the first and third columns with 44.
+
+```{r}
+m3[2:3, c(1, 3)] <- 44
+m3
+```
+
+::: practice
+
+Consider the following matrix.
+
+```{r}
+(a <- matrix(1:4, 2, 2))
+``` 
+
+**Predict** what the following code will print.
+
+```{r}
+#| eval: false 
+
+a[1, 1] <- "b"
+a
+```
+
+:::: {.panel-tabset}
+
+## {{< var tab_title.editor >}}
 
 ```{webr-r}
 ```
+
+## {{< var tab_title.solution >}}
+
+```{r}
+a[1, 1] <- "b"
+a
+```
+
+You should notice two changes to the matrix `a`.
+
+1. The data in the upper-left corner cell has been overwritten with `"b"`.
+1. All other values in the matrix have been converted to character strings.
+
+As with vectors, matrices can only store one type of data. When we try to replace the numeric value in `a[1, 1]` with
+the length-one character vector `"b"`, R needs to do something to resolve the type discrepancy. Since there's no
+unambiguous way to convert `"b"` to a number, R converts all of `a` to a character matrix.
+
+::::
+
+:::
+
+## Recycling
+
+Matrices usually obey R's recycling rules (the same rules you already learned for vectors). If you attempt to perform
+arithmetic between a matrix and a vector that has fewer elements than the matrix, R will try to make the lengths match
+by recycling the elements from the vector.
+
+```{r}
+
+(m1 <- matrix(1:9, 3, 3))
+(m2 <- matrix(sample(-5:5, 9, TRUE), 3, 3))
+(v1 <- 1:3)
+(v2 <- 1:2)
+```
+
+As with vectors, R won't issue a warning if the length of the vector evenly divides the number of elements in the
+matrix.
+
+```{r}
+# Recycling the elements of 'v1' without a warning
+m1 + v1
+m1 * v1
+```
+
+When the vector's length is not a multiple of the number of elements in the matrix, recycling triggers a warning.
+
+```{r}
+#| warning: true
+
+# Recycling the elements of 'v2' with a warning
+m1 + v2
+m1 * v2
+```
+
+We can also leverage recycling when generating new matrices. For example, the following code demonstrates a common
+use-case where we create an empty matrix to fill later. We populated a $2 \times 2$ matrix by recycling the missing
+data code, `NA`, four times.
+
+```{r}
+matrix(NA, 2, 2)
+```
+
+::: important
+
+When populating a matrix with by recycle multi-element vectors, we need to be mindful of the order in which the matrix
+cells are filled.
+
+```{r}
+matrix(1:4, 4, 4)
+matrix(1:2, 4, 4, byrow = TRUE)
+```
+
+:::
+
+::: practice
+
+- **Predict** what the following expression will print.
+- Will this code produce an error or a warning? If so, why?
+
+```{r}
+matrix(2:3, 3, 4)
+```
+
+:::: {.panel-tabset}
+
+## {{< var tab_title.editor >}}
+
+```{webr-r}
+```
+
+## {{< var tab_title.solution >}}
+
+```{r}
+matrix(2:3, 3, 4)
+```
+
+- The code produces a $3 \times 4$ matrix filled (in column-major order) with the values `2` and `3`.
+- The code runs without any errors or warnings because the matrix contains 12 cells, the input vector has two elements,
+	and 2 evenly divides 12.
+
+::::
+
+:::
+
+We can also use recycling when we want to overwrite multiple matrix elements with the same replacement value.
+
+```{r}
+m2[1:2, 3] <- -99
+m2
+
+m2[3, 1:2] <- c(88, 99)
+m2
+```
+
+### Exceptions
+
+Recycling isn't a universal shortcut, though. Sometimes, R won't accommodate our sloppiness. For example, we can't do
+any arithmetic with matrices that have different dimensions.
+
+```{r}
+#| error: true
+
+(m3 <- matrix(c(1, 3), 2, 1))
+m1 + m3
+m1 * m3
+```
+
+We also can't do arithmetic between a matrix and vector that contains *more* elements than the matrix.
+
+```{r}
+#| error: true
+
+v3 <- 1:18
+m1 + v3
+m1 * v3
+```
+
+When it comes to overwriting matrix elements, R is especially picky about what size of vector it will use to overwrite a
+selection of matrix elements.
+
+**OK**
+
+- Replacement length = Selection length
+- Replacement length cleanly divides selection length
+
+```{r}
+# Works: Replace 4 elements with length-4 vector
+m1[1:2, 2:3] <- 1:4
+m1
+
+# Works: Replace 4 elements with length-2 vector
+m1[1:2, 2:3] <- 1:2
+m1
+
+# Works: Replace 4 elements with length-1 vector
+m1[1:2, 2:3] <- 42
+m1
+```
+
+**Not OK**
+
+- Replacement length > Selection length
+   - Still true when replacement length is a multiple of selection length
+- Replacement length *does not* cleanly divide the selection length
+
+```{r}
+#| error: true
+
+# Fails: Replace 4 elements with length-3 vector (3 does not divide 4 evenly)
+m1[1:2, 2:3] <- 1:3
+
+# Fails: Replace 4 elements with length-8 vector (8 is bigger than the selection)
+m1[1:2, 2:3] <- 1:8
+```
+
+
+::: knowledge-check
+
+- What's the difference between `m1[1, ]` and `m1[, 1]`?
+- Assume `m1` is a $3 \times 4$ matrix, `v1` is a length-two vector, and `v2` is a length-five vector. Why does `m1 +
+v1` recycle silently, while `m1 + v2` recycles with a warning? What's the underlying rule?
+
+```{webr-r}
+```
+
+:::
 
 ::: {.callout-tip}
 
 ## Ready to Continue?
 
-You've now completed the *Vectors & Matrices* module. You're ready to move on if you can:
+You're ready progress if you can:
 
 - Explain what makes a matrix "just a vector with a `dim` attribute."
 - Create a matrix with `matrix()`, and predict whether it fills by row or by column.
 - Apply arithmetic to matrices and predict when recycling will happen silently vs. with a warning.
 - Select and modify matrix elements using row and column indices.
 
-If any of these still feel shaky, revisit the relevant page above, or try the
-[Knowledge Quiz](/quizzes/matrices/index.qmd) to pinpoint exactly where to focus. Once you're ready, head to the
-[Conclusion](/conclusion.qmd) page to find this module's hand-in assignment.
+Take the [Knowledge Quiz](/quizzes/matrices/index.qmd) to evaluate your learning.
 
 :::

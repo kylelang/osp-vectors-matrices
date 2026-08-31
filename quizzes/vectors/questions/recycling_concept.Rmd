@@ -1,12 +1,13 @@
 Question
 ========
+
 `a <- 1:6` and `b <- 1:2` are two vectors. When you run `a + b`, R recycles the elements of `b` without printing a
 warning. Why doesn't R warn you in this case?
 
 Answerlist
 ----------
-* Because the length of `a` (6) is evenly divisible by the length of `b` (2), so every element of `b` gets used the
-  same number of times, with nothing left over.
+
+* Because the length of `a` (6) is evenly divisible by the length of `b` (2).
 * Because `a` and `b` are both integer vectors.
 * Because R only warns about recycling when the shorter vector has exactly one element.
 * Because addition never triggers recycling warnings, unlike other arithmetic operators.
@@ -14,13 +15,15 @@ Answerlist
 
 Solution
 ========
-R only warns about recycling when the shorter vector's length does *not* evenly divide the longer vector's length.
-In those cases, at least one "leftover" element gets used a different number of times than the rest, which is often a
-sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every
-element of the shorter vector is reused the same number of times, so R treats it as intentional and stays silent.
+
+R only warns about recycling when the shorter vector's length does *not* evenly divide the longer vector's length. In
+those cases, at least one "leftover" element gets used a different number of times than the rest, which is often a sign
+of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the
+shorter vector is reused the same number of times, so R treats the recycling as intentional and stays silent.
 
 Meta-information
 ================
+
 exname: Recycling Warnings
 extype: schoice
 exsolution: 10000
