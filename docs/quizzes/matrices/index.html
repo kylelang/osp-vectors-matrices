@@ -71,6 +71,32 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-explanation.callout {
+  border-left-color: violet;
+}
+div.callout-explanation.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f075' !important;
+  background-image: none;
+}
+div.callout-reading.callout {
+  border-left-color: violet;
+}
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
 div.callout-resource.callout {
   border-left-color: orange;
 }
@@ -82,6 +108,19 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-going-further.callout {
+  border-left-color: #B58900;
+}
+div.callout-going-further.callout-style-default > .callout-header {
+  background-color: rgba(181, 137, 0, 0.13);
+}
+div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f4d7' !important;
   background-image: none;
 }
 div.callout-knowledge-check.callout {
@@ -110,30 +149,17 @@ div.callout-reading-advanced.callout-style-default .callout-icon::before, div.ca
   content: '\f518' !important;
   background-image: none;
 }
-div.callout-reading.callout {
-  border-left-color: violet;
+div.callout-practice.callout {
+  border-left-color: green;
 }
-div.callout-reading.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
+div.callout-practice.callout-style-default > .callout-header {
+  background-color: rgb(from green r g b / 13%);
 }
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
-div.callout-completion-time.callout {
-  border-left-color: gray;
-}
-div.callout-completion-time.callout-style-default > .callout-header {
-  background-color: rgb(from gray r g b / 13%);
-}
-div.callout-completion-time .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-completion-time.callout-style-default .callout-icon::before, div.callout-completion-time.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f2f2' !important;
+  content: '\f085' !important;
   background-image: none;
 }
 div.callout-common-mistakes.callout {
@@ -149,43 +175,17 @@ div.callout-common-mistakes.callout-style-default .callout-icon::before, div.cal
   content: '\f188' !important;
   background-image: none;
 }
-div.callout-explanation.callout {
-  border-left-color: violet;
+div.callout-completion-time.callout {
+  border-left-color: gray;
 }
-div.callout-explanation.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
+div.callout-completion-time.callout-style-default > .callout-header {
+  background-color: rgb(from gray r g b / 13%);
 }
-div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
+div.callout-completion-time .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-completion-time.callout-style-default .callout-icon::before, div.callout-completion-time.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f075' !important;
-  background-image: none;
-}
-div.callout-practice.callout {
-  border-left-color: green;
-}
-div.callout-practice.callout-style-default > .callout-header {
-  background-color: rgb(from green r g b / 13%);
-}
-div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f085' !important;
-  background-image: none;
-}
-div.callout-going-further.callout {
-  border-left-color: #B58900;
-}
-div.callout-going-further.callout-style-default > .callout-header {
-  background-color: rgba(181, 137, 0, 0.13);
-}
-div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f4d7' !important;
+  content: '\f2f2' !important;
   background-image: none;
 }
 </style>
@@ -415,17 +415,17 @@ window.Quarto = {
 4 &amp; 5 &amp; 6 \\
 \end{bmatrix}
 \]</span></p>
-<div id="webex-9642add602bd26c54419c2d9109f5473" class="webex-radiogroup" data-answer="YgYYAk1USAYcAz8=">
-<label><input type="radio" autocomplete="off" name="9642add602bd26c54419c2d9109f5473"><span><code>matrix(1:6, 3, 2)</code></span></label><label><input type="radio" autocomplete="off" name="9642add602bd26c54419c2d9109f5473"><span><code>matrix(1:6, 3, 2, byrow = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="9642add602bd26c54419c2d9109f5473"><span><code>matrix(6, 2, 3)</code></span></label><label><input type="radio" autocomplete="off" name="9642add602bd26c54419c2d9109f5473"><span><code>matrix(1:6, 2, 3)</code></span></label><label><input type="radio" autocomplete="off" name="9642add602bd26c54419c2d9109f5473"><span><code>matrix(1:6, 2, 3, byrow = TRUE)</code></span></label>
+<div id="webex-d7a4fbf4257a57797d393c2170a8b785" class="webex-radiogroup" data-answer="PwdNBEpTSgQeBWo=">
+<label><input type="radio" autocomplete="off" name="d7a4fbf4257a57797d393c2170a8b785"><span><code>matrix(1:6, 2, 3)</code></span></label><label><input type="radio" autocomplete="off" name="d7a4fbf4257a57797d393c2170a8b785"><span><code>matrix(1:6)</code></span></label><label><input type="radio" autocomplete="off" name="d7a4fbf4257a57797d393c2170a8b785"><span><code>matrix(1:6, 2, 3, byrow = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="d7a4fbf4257a57797d393c2170a8b785"><span><code>matrix(6, 3, 2)</code></span></label><label><input type="radio" autocomplete="off" name="d7a4fbf4257a57797d393c2170a8b785"><span><code>matrix(6, 2, 3)</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
 <ul>
-<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 5 \\ 3 &amp; 6 \\ \end{bmatrix}\]</span></li>
-<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \\ \end{bmatrix}\]</span></li>
-<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 6 &amp; 6 &amp; 6 \\ 6 &amp; 6 &amp; 6 \\ \end{bmatrix}\]</span></li>
 <li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \\ \end{bmatrix}\]</span></li>
+<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \\ 5 \\ 6 \\ \end{bmatrix}\]</span></li>
 <li>Correct.</li>
+<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 6 &amp; 6 \\ 6 &amp; 6 \\ 6 &amp; 6 \\ \end{bmatrix}\]</span></li>
+<li>Wrong. This command will return <span class="math display">\[\begin{bmatrix} 6 &amp; 6 &amp; 6 \\ 6 &amp; 6 &amp; 6 \\ \end{bmatrix}\]</span></li>
 </ul>
 </div>
 </div>
@@ -447,16 +447,16 @@ b &amp;= \begin{bmatrix}
 \end{bmatrix}
 \end{align*}
 \]</span></p>
-<div id="webex-e56340e99b89e13fa55b8bd7646773a1" class="webex-checkboxgroup" data-answer="PgUaAhgBSQkVU2U=">
-<label><input type="checkbox" autocomplete="off" name="e56340e99b89e13fa55b8bd7646773a1"><span><code>a[c(3, 5), ] &lt;- c(4, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="e56340e99b89e13fa55b8bd7646773a1"><span><code>a[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2)</code></span></label><label><input type="checkbox" autocomplete="off" name="e56340e99b89e13fa55b8bd7646773a1"><span><code>a[c(2, 3), ] &lt;- c(3, 4, 5, 6)</code></span></label><label><input type="checkbox" autocomplete="off" name="e56340e99b89e13fa55b8bd7646773a1"><span><code>a[c(2, 3), c(1, 2)] &lt;- c(4, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="e56340e99b89e13fa55b8bd7646773a1"><span><code>a[c(2, 3), c(1, 2)] &lt;- c(3, 4, 5, 6)</code></span></label>
+<div id="webex-5c03a913b8cf3f594123ea6ed5183cbe" class="webex-checkboxgroup" data-answer="blMcA00JHQNOCT4=">
+<label><input type="checkbox" autocomplete="off" name="5c03a913b8cf3f594123ea6ed5183cbe"><span><code>a[2, 3] &lt;- c(4, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="5c03a913b8cf3f594123ea6ed5183cbe"><span><code>a[c(3, 5), ] &lt;- c(4, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="5c03a913b8cf3f594123ea6ed5183cbe"><span><code>a[c(2, 3), c(1, 2)] &lt;- c(4, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="5c03a913b8cf3f594123ea6ed5183cbe"><span><code>a[c(2, 3), c(1, 2)] &lt;- matrix(3:6, 2, 2, byrow = TRUE)</code></span></label><label><input type="checkbox" autocomplete="off" name="5c03a913b8cf3f594123ea6ed5183cbe"><span><code>a[c(2, 3), c(1, 2)] &lt;- c(3, 4, 5, 6)</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
 <ul>
+<li>Wrong. This command will produce an error since we’re trying to overwrite columns that don’t exist.</li>
 <li>Wrong. This command will produce an error since we’re trying to overwrite rows that don’t exist.</li>
-<li>Correct.</li>
-<li>Correct.</li>
 <li>Wrong. This command will produce <span class="math display">\[\begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 4 \\ 5 &amp; 5 \\ \end{bmatrix}\]</span></li>
+<li>Wrong. This command will produce <span class="math display">\[\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \\ \end{bmatrix}\]</span></li>
 <li>Correct.</li>
 </ul>
 </div>
@@ -464,8 +464,8 @@ b &amp;= \begin{bmatrix}
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements most accurately describes the relationship between an R matrix and an R vector?</p>
-<div id="webex-6ad932054e8159d689301cbbdf833782" class="webex-radiogroup" data-answer="bVFICR8DHAUYVWU=">
-<label><input type="radio" autocomplete="off" name="6ad932054e8159d689301cbbdf833782"><span>Matrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.</span></label><label><input type="radio" autocomplete="off" name="6ad932054e8159d689301cbbdf833782"><span>A matrix and a vector are completely unrelated object types that happen to share some function names.</span></label><label><input type="radio" autocomplete="off" name="6ad932054e8159d689301cbbdf833782"><span>A matrix is a vector that has a <code>dim</code> attribute telling R to treat it as having rows and columns.</span></label><label><input type="radio" autocomplete="off" name="6ad932054e8159d689301cbbdf833782"><span>A matrix is a list containing one vector per column.</span></label><label><input type="radio" autocomplete="off" name="6ad932054e8159d689301cbbdf833782"><span>A vector is a special case of a matrix that always has exactly one column.</span></label>
+<div id="webex-481b2c2fb1c7bfb3891dd1475adf0bd8" class="webex-radiogroup" data-answer="bwkdUh5THlZOAT4=">
+<label><input type="radio" autocomplete="off" name="481b2c2fb1c7bfb3891dd1475adf0bd8"><span>A matrix is a vector that has a <code>dim</code> attribute telling R to treat it as having rows and columns.</span></label><label><input type="radio" autocomplete="off" name="481b2c2fb1c7bfb3891dd1475adf0bd8"><span>Matrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.</span></label><label><input type="radio" autocomplete="off" name="481b2c2fb1c7bfb3891dd1475adf0bd8"><span>A vector is a special case of a matrix that always has exactly one column.</span></label><label><input type="radio" autocomplete="off" name="481b2c2fb1c7bfb3891dd1475adf0bd8"><span>A matrix and a vector are completely unrelated object types that happen to share some function names.</span></label><label><input type="radio" autocomplete="off" name="481b2c2fb1c7bfb3891dd1475adf0bd8"><span>A matrix is a list containing one vector per column.</span></label>
 </div>
 </div>
 <div class="webex-solution">
