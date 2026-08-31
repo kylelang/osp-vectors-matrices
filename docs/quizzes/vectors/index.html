@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../tutorials/matrices/index.html" rel="next">
-<link href="../../tutorials/vectors/elements_selection.html" rel="prev">
+<link href="../../tutorials/vectors/importance.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,30 +71,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-reading.callout {
-  border-left-color: violet;
+div.callout-going-further.callout {
+  border-left-color: #B58900;
 }
-div.callout-reading.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
+div.callout-going-further.callout-style-default > .callout-header {
+  background-color: rgba(181, 137, 0, 0.13);
 }
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
-div.callout-explanation.callout {
-  border-left-color: violet;
-}
-div.callout-explanation.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
-}
-div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f075' !important;
+  content: '\f4d7' !important;
   background-image: none;
 }
 div.callout-knowledge-check.callout {
@@ -110,17 +97,17 @@ div.callout-knowledge-check.callout-style-default .callout-icon::before, div.cal
   content: '\f044' !important;
   background-image: none;
 }
-div.callout-going-further.callout {
-  border-left-color: #B58900;
+div.callout-reading-advanced.callout {
+  border-left-color: red;
 }
-div.callout-going-further.callout-style-default > .callout-header {
-  background-color: rgba(181, 137, 0, 0.13);
+div.callout-reading-advanced.callout-style-default > .callout-header {
+  background-color: rgb(from red r g b / 13%);
 }
-div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
+div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f4d7' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-common-mistakes.callout {
@@ -175,17 +162,30 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   content: '\f085' !important;
   background-image: none;
 }
-div.callout-reading-advanced.callout {
-  border-left-color: red;
+div.callout-reading.callout {
+  border-left-color: violet;
 }
-div.callout-reading-advanced.callout-style-default > .callout-header {
-  background-color: rgb(from red r g b / 13%);
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
 }
-div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f518' !important;
+  background-image: none;
+}
+div.callout-explanation.callout {
+  border-left-color: violet;
+}
+div.callout-explanation.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f075' !important;
   background-image: none;
 }
 </style>
@@ -317,7 +317,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../tutorials/vectors/elements_selection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Manipulating Vectors</span></a>
+ <span class="menu-text">Subsetting Vectors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/vectors/importance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Role of Vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,6 +405,60 @@ window.Quarto = {
 </header>
 
 
+<div class="cell" data-layout-align="center">
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Which of the following expressions generates the integer vector 1, 2, 3, 4, 5?</p>
+<div id="webex-c5582b2ab79f19b791281296b4ba19c1" class="webex-checkboxgroup" data-answer="OAQZCR5SHlFOB2Q=">
+<label><input type="checkbox" autocomplete="off" name="c5582b2ab79f19b791281296b4ba19c1"><span><code>1:5</code></span></label><label><input type="checkbox" autocomplete="off" name="c5582b2ab79f19b791281296b4ba19c1"><span><code>seq(0, 4, 1) + 1</code></span></label><label><input type="checkbox" autocomplete="off" name="c5582b2ab79f19b791281296b4ba19c1"><span><code>seq(0, 4, 1) - 1</code></span></label><label><input type="checkbox" autocomplete="off" name="c5582b2ab79f19b791281296b4ba19c1"><span><code>rep(1, 5, 1)</code></span></label><label><input type="checkbox" autocomplete="off" name="c5582b2ab79f19b791281296b4ba19c1"><span><code>rep(1, 5)</code></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<ul>
+<li>Correct.</li>
+<li>Correct.</li>
+<li>Wrong. This command will return a length-five vector containing the integers from -1 to 3.</li>
+<li>Wrong. This command is equivalent to <code>rep(1, times = 5, length.out = 1)</code>. The <code>length.out</code> argument takes precedence over the <code>times</code> argument. So the result is a length-one vector containing only 1.</li>
+<li>Wrong. This command will return a sequence of five 1s.</li>
+</ul>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>What is the value of <code>a * b</code>, given the following vectors?</p>
+<p><span class="math display">\[
+\begin{align*}
+a &amp;= 2, 1, 4\\
+b &amp;= 4, 2, 5
+\end{align*}
+\]</span></p>
+<p><em>Note:</em> Incorrectly formatted answers won’t be recognized as correct</p>
+<ul>
+<li>Format you answer as <code>element1, element2, element3, ...</code></li>
+<li>Separate each element with a comma and a space.</li>
+<li>Write all numbers without decimal places (e.g., write <code>8</code>, not <code>8.0</code>).</li>
+</ul>
+<p><input class="webex-solveme" id="webex-4c0433ca7fb58a888ca3f02dba10d82b" size="20" data-answer="b0EIGBMBT0EFVkBo"></p>
+</div>
+<div class="webex-solution">
+<p>The <code>a * b</code> implements element-wise multiplication, so the result is 8, 2, 20.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><code>a &lt;- 1:6</code> and <code>b &lt;- 1:2</code> are two vectors. When you run <code>a + b</code>, R recycles the elements of <code>b</code> without printing a warning. Why doesn’t R warn you in this case?</p>
+<div id="webex-7dd1bba2a5075b15d1cc6a81012b5d1e" class="webex-radiogroup" data-answer="bFRIAU5TTQJNBW0=">
+<label><input type="radio" autocomplete="off" name="7dd1bba2a5075b15d1cc6a81012b5d1e"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="7dd1bba2a5075b15d1cc6a81012b5d1e"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label><label><input type="radio" autocomplete="off" name="7dd1bba2a5075b15d1cc6a81012b5d1e"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2).</span></label><label><input type="radio" autocomplete="off" name="7dd1bba2a5075b15d1cc6a81012b5d1e"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label><label><input type="radio" autocomplete="off" name="7dd1bba2a5075b15d1cc6a81012b5d1e"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>R only warns about recycling when the shorter vector’s length does <em>not</em> evenly divide the longer vector’s length. In those cases, at least one “leftover” element gets used a different number of times than the rest, which is often a sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the shorter vector is reused the same number of times, so R treats the recycling as intentional and stays silent.</p>
+</div>
+</div>
+</div>
+
+
+
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-note callout-titled">
@@ -417,71 +477,7 @@ Note
 </ul>
 </div>
 </div>
-</div></div><div class="cell" data-layout-align="center">
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Which of the following expressions generates the integer vector 1, 2, 3, 4, 5?</p>
-<div id="webex-0b14ca2a2b494f8bbcdc4a87ca9b848f" class="webex-checkboxgroup" data-answer="a1IdBE9RHlAeUmk=">
-<label><input type="checkbox" autocomplete="off" name="0b14ca2a2b494f8bbcdc4a87ca9b848f"><span><code>seq(0, 4, 1) - 1</code></span></label><label><input type="checkbox" autocomplete="off" name="0b14ca2a2b494f8bbcdc4a87ca9b848f"><span><code>seq(1, 5, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="0b14ca2a2b494f8bbcdc4a87ca9b848f"><span><code>rep(1, 5)</code></span></label><label><input type="checkbox" autocomplete="off" name="0b14ca2a2b494f8bbcdc4a87ca9b848f"><span><code>rep(1:5, 1)</code></span></label><label><input type="checkbox" autocomplete="off" name="0b14ca2a2b494f8bbcdc4a87ca9b848f"><span><code>rep(1, 5, 5)</code></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<ul>
-<li>Wrong. This command will return a length-five vector containing the integers from -1 to 3.</li>
-<li>Wrong. This command will return a length-one vector containing only 1.</li>
-<li>Wrong. This command will return a sequence of five 1s.</li>
-<li>Correct.</li>
-<li>Wrong. This command will return a length-25 vector that repeats the integers from 1 to 5 five times.</li>
-</ul>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>What is the value of <code>a * b</code>, given the following vectors?</p>
-<p><span class="math display">\[
-\begin{align*}
-a &amp;= 2, 5, 3\\
-b &amp;= 4, 2, 5
-\end{align*}
-\]</span></p>
-<ul>
-<li>Format you answer as <code>element1, element2, element3, ...</code></li>
-<li>Separate each element with a comma and a space.</li>
-<li>Incorrectly formatted answers won’t be recognized as correct</li>
-</ul>
-<p><input class="webex-solveme" id="webex-66c88b873d9217da84098cff821152fa" size="20" data-answer="bRRbFBhTCBsTVQwQbA=="></p>
-</div>
-<div class="webex-solution">
-<p>The <code>a * b</code> implements element-wise multiplication, so the result is 8, 10, 15.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p><code>a &lt;- 1:6</code> and <code>b &lt;- 1:2</code> are two vectors. When you run <code>a + b</code>, R recycles the elements of <code>b</code> without printing a warning. Why doesn’t R warn you in this case?</p>
-<div id="webex-c98ec1c203956ea9fc6c5d30d3297a79" class="webex-radiogroup" data-answer="OAkUVU8BTwIcAmQ=">
-<label><input type="radio" autocomplete="off" name="c98ec1c203956ea9fc6c5d30d3297a79"><span>Because R only warns about recycling when the shorter vector has exactly one element.</span></label><label><input type="radio" autocomplete="off" name="c98ec1c203956ea9fc6c5d30d3297a79"><span>Because <code>a</code> and <code>b</code> are both integer vectors.</span></label><label><input type="radio" autocomplete="off" name="c98ec1c203956ea9fc6c5d30d3297a79"><span>Because <code>b</code> was created using <code>:</code> instead of <code>c()</code>.</span></label><label><input type="radio" autocomplete="off" name="c98ec1c203956ea9fc6c5d30d3297a79"><span>Because addition never triggers recycling warnings, unlike other arithmetic operators.</span></label><label><input type="radio" autocomplete="off" name="c98ec1c203956ea9fc6c5d30d3297a79"><span>Because the length of <code>a</code> (6) is evenly divisible by the length of <code>b</code> (2), so every element of <code>b</code> gets used the same number of times, with nothing left over.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>R only warns about recycling when the shorter vector’s length does <em>not</em> evenly divide the longer vector’s length. In those cases, at least one “leftover” element gets used a different number of times than the rest, which is often a sign of a mistake. When the shorter length divides the longer one evenly (as with lengths 6 and 2 here), every element of the shorter vector is reused the same number of times, so R treats it as intentional and stays silent.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Which of the following best describes why <code>1</code>, <code>1L</code>, and <code>TRUE</code> can all live together in the same numeric vector, but <code>1</code> and <code>"1"</code> cannot live together in a numeric vector?</p>
-<div id="webex-890e0c2dc164d3dfaf884afe30466565" class="webex-radiogroup" data-answer="YwkcVRxTHlVPAWs=">
-<label><input type="radio" autocomplete="off" name="890e0c2dc164d3dfaf884afe30466565"><span><code>"1"</code> is not valid R syntax, so it’s not a fair comparison.</span></label><label><input type="radio" autocomplete="off" name="890e0c2dc164d3dfaf884afe30466565"><span>R vectors can only ever hold one single value, so this comparison doesn’t apply.</span></label><label><input type="radio" autocomplete="off" name="890e0c2dc164d3dfaf884afe30466565"><span>Numbers and logicals are actually the same type in R, while text is stored completely separately from vectors.</span></label><label><input type="radio" autocomplete="off" name="890e0c2dc164d3dfaf884afe30466565"><span>All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a common numeric representation, but converting a number to text changes what kind of data it represents.</span></label><label><input type="radio" autocomplete="off" name="890e0c2dc164d3dfaf884afe30466565"><span>R vectors can mix any types freely, so both examples would work identically.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Every element in an atomic vector must share the same mode. R will automatically convert (coerce) values to a common, compatible mode when needed: <code>TRUE</code> can become <code>1</code> without any real loss of information, since logicals and numbers are both fundamentally numeric under the hood. But converting <code>1</code> to <code>"1"</code> changes what the value fundamentally <em>is</em> (a number vs.&nbsp;a piece of text), which is why mixing numeric and character values forces the whole vector to become character.</p>
-</div>
-</div>
-</div>
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div></div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -911,8 +907,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../tutorials/vectors/elements_selection.html" class="pagination-link" aria-label="Manipulating Vectors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Manipulating Vectors</span>
+      <a href="../../tutorials/vectors/importance.html" class="pagination-link" aria-label="The Role of Vectors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The Role of Vectors</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

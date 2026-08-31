@@ -1,10 +1,12 @@
 Question
 ========
+
 Which of the following best describes why `1`, `1L`, and `TRUE` can all live together in the same numeric vector, but
 `1` and `"1"` cannot live together in a numeric vector?
 
 Answerlist
 ----------
+
 * All elements of an atomic vector must share the same mode; numbers and logicals can be automatically converted to a
   common numeric representation, but converting a number to text changes what kind of data it represents.
 * R vectors can only ever hold one single value, so this comparison doesn't apply.
@@ -14,6 +16,7 @@ Answerlist
 
 Solution
 ========
+
 Every element in an atomic vector must share the same mode. R will automatically convert (coerce) values to a common,
 compatible mode when needed: `TRUE` can become `1` without any real loss of information, since logicals and numbers
 are both fundamentally numeric under the hood. But converting `1` to `"1"` changes what the value fundamentally *is*
@@ -22,6 +25,7 @@ character.
 
 Meta-information
 ================
+
 exname: Atomic Mode Coercion
 extype: schoice
 exsolution: 10000

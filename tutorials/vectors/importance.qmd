@@ -13,10 +13,7 @@ progress to the next tutorial.
 :::
 
 Before we proceed to more complex types of data objects, let's take a moment to consider the unique role that vectors
-play in R's design philosophy. In particular, we should address two questions.
-
-1. What makes vectors "atomic" data types?
-1. Why should you care about vectors?
+play in R's design philosophy. In particular, we should explore what makes vectors "atomic" data types.
 
 ## How are Vectors Atomic?
 
@@ -30,44 +27,46 @@ R vectors are "atomic" in two ways.
 As we briefly mentioned on the first page of this tutorial, vectors are the simplest data type in R. So, there is no
 such thing as a true scalar in R. By the standards of most programming languages, that's very strange. In R, any single
 value with one of the six atomic modes is a length-one vector. So, as far as R is concerned the following expressions do
-not represent numbers, logical values, or character strings: they're all different flavors of vectors.
+not represent a number, a boolean value, and a character string.
 
 ```{r}
+#| eval: false
+
 3.14
-1+2i
 TRUE
-"foo"
+"foo bar"
 ```
+
+R treats each of the above as a different flavor of length-one vector.
+
+#### Numbers
+
+R views one number as a length-one numeric vector.
 
 ```{r}
 typeof(3.14)
-typeof(1+2i)
-typeof(TRUE)
-typeof("foo")
-```
-
-```{r}
 length(3.14)
-length(1+2i)
-length(TRUE)
-length("foo")
-```
-
-```{r}
 is.vector(3.14)
-is.vector(1+2i)
-is.vector(TRUE)
-is.vector("foo")
 ```
 
-So, regardless of how differently we may perceive the following two objects, R will view and treat them both in exactly
-the same way.
+#### Boolean Values
+
+R views one `TRUE` or `FALSE` as a length-one logical vector.
 
 ```{r}
-#| echo: false
+typeof(TRUE)
+length(TRUE)
+is.vector(TRUE)
+```
 
-"foo"
-tail(letters, 15)
+#### Character Strings
+
+R views a single quoted piece of text as a length-one character vector.
+
+```{r}
+typeof("foo bar")
+length("foo bar")
+is.vector("foo bar")
 ```
 
 For most of your day-to-day R programming and data analysis, the technical distinction between a scalar and a length-one
@@ -83,6 +82,8 @@ in R. If vectors could store different types of data, we'd need some simpler typ
 heterogeneous data we want to store in our vector. Ergo, since there's nothing simpler than a vector, vectors must
 contain only one type of data.
 
+#### Type Casting
+
 Considering the draconian restrictions on vector types, it may surprise you to learn that the following code is
 perfectly legal and won't cause any errors. We're attempting to concatenating a length-one numeric vector, a length-one
 logical vector, and a length-one character vector into a single length-three vector. Why does that work?
@@ -92,7 +93,7 @@ c(1, FALSE, "foo")
 ```
 
 When you try to combine heterogeneous data into a single vector, R will automatically convert the types of some elements
-to produce a legal atomic vector. In the example above, the only way to resolve the type discrepancy was to enquote each
+to produce a legal atomic vector. In the example above, the only way to resolve the type discrepancy was to quote each
 element and return a character vector.
 
 In the following example, R was able to resolve the type discrepancy with a less drastic conversion. Merely converting
@@ -129,15 +130,6 @@ Conversely, in the example below, when we try to assign the numeric value `1` to
 y[2] <- 1
 y
 ```
-
-## Why Care?
-
-At this point, you've probably been more-or-less inundated with vector-related information, and it might not be clear
-why you should care about such a simple type of data object. After all, you're not going to use vectors to store your
-research data.
-
-Actually, that's pretty much correct: you won't use atomic vectors for much in the way of storing useful, interesting
-data. However, you will use vectors more than any other type of data object in R. 
 
 ::: knowledge-check
 
