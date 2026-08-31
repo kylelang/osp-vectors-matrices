@@ -69,6 +69,71 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-resource.callout {
+  border-left-color: orange;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgb(from orange r g b / 13%);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-knowledge-check.callout {
+  border-left-color: #368FFF;
+}
+div.callout-knowledge-check.callout-style-default > .callout-header {
+  background-color: rgba(54, 143, 255, 0.13);
+}
+div.callout-knowledge-check .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-knowledge-check.callout-style-default .callout-icon::before, div.callout-knowledge-check.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f044' !important;
+  background-image: none;
+}
+div.callout-going-further.callout {
+  border-left-color: #B58900;
+}
+div.callout-going-further.callout-style-default > .callout-header {
+  background-color: rgba(181, 137, 0, 0.13);
+}
+div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f4d7' !important;
+  background-image: none;
+}
+div.callout-explanation.callout {
+  border-left-color: violet;
+}
+div.callout-explanation.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f075' !important;
+  background-image: none;
+}
+div.callout-reading.callout {
+  border-left-color: violet;
+}
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
 div.callout-reading-advanced.callout {
   border-left-color: red;
 }
@@ -95,30 +160,30 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   content: '\f085' !important;
   background-image: none;
 }
-div.callout-reading.callout {
-  border-left-color: purple;
+div.callout-completion-time.callout {
+  border-left-color: gray;
 }
-div.callout-reading.callout-style-default > .callout-header {
-  background-color: rgb(from purple r g b / 13%);
+div.callout-completion-time.callout-style-default > .callout-header {
+  background-color: rgb(from gray r g b / 13%);
 }
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+div.callout-completion-time .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-completion-time.callout-style-default .callout-icon::before, div.callout-completion-time.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f518' !important;
+  content: '\f2f2' !important;
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: orange;
+div.callout-common-mistakes.callout {
+  border-left-color: #B01919;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgb(from orange r g b / 13%);
+div.callout-common-mistakes.callout-style-default > .callout-header {
+  background-color: rgba(176, 25, 25, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+div.callout-common-mistakes .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-common-mistakes.callout-style-default .callout-icon::before, div.callout-common-mistakes.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f0c1' !important;
+  content: '\f188' !important;
   background-image: none;
 }
 </style>
@@ -226,6 +291,12 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../tutorials/vectors/importance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Role of Vectors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../quizzes/vectors/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Knowledge Quiz</span></a>
   </div>
@@ -304,7 +375,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>A matrix is a vector that has a <code>dim</code> attribute telling R to treat it as having rows and columns; removing that attribute turns the matrix back into an ordinary vector.</li>
+<li>A matrix is a vector that has a <code>dim</code> attribute telling R to treat it as having rows and columns.</li>
 <li>A matrix and a vector are completely unrelated object types that happen to share some function names.</li>
 <li>A vector is a special case of a matrix that always has exactly one column.</li>
 <li>Matrices store their data in a fundamentally different way from vectors, using rows and columns instead of a single sequence of values.</li>
@@ -314,7 +385,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>A matrix’s underlying data is stored exactly like a vector’s — a single, flat sequence of same-typed values. What makes it a matrix is the addition of a <code>dim</code> attribute that tells R how to interpret that flat sequence as having rows and columns. You can convert a vector to a matrix by adding a <code>dim</code> attribute, and convert a matrix back to a vector by removing it, without touching the underlying data at all.</p>
+<p>A matrix’s underlying data is stored exactly like a vector’s. What makes a matrix different is the addition of a <code>dim</code> attribute that tells R to interpret the sequence of underlying data as having rows and columns. You can convert a vector to a matrix by adding a <code>dim</code> attribute, and you can convert a matrix back to a vector by removing the <code>dim</code> attribute.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>

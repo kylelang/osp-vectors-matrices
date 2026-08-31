@@ -404,7 +404,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"classes":"","fig-cap":"","editor-word-wrap":"true","label":"unnamed-chunk-1","message":"true","warning":"true","editor-font-scale":"1","out-width":"700px","autorun":"false","read-only":"false","comment":"","out-height":"","dpi":72,"output":"true","context":"interactive","fig-width":7,"fig-height":5,"editor-quick-suggestions":"false","editor-max-height":"","results":"markup"},"code":"x <- vector(\"complex\", 3)\ntypeof(x)"},{"id":2,"options":{"classes":"","fig-cap":"","editor-word-wrap":"true","label":"unnamed-chunk-2","message":"true","warning":"true","editor-font-scale":"1","out-width":"700px","autorun":"false","read-only":"false","comment":"","out-height":"","dpi":72,"output":"true","context":"interactive","fig-width":7,"fig-height":5,"editor-quick-suggestions":"false","editor-max-height":"","results":"markup"},"code":"set.seed(235711)\nmyVec <- sample(1:5)"}];
+globalThis.qwebrCellDetails = [{"code":"x <- vector(\"complex\", 3)\ntypeof(x)","options":{"fig-cap":"","autorun":"false","message":"true","editor-max-height":"","warning":"true","results":"markup","editor-quick-suggestions":"false","out-height":"","classes":"","output":"true","read-only":"false","comment":"","label":"unnamed-chunk-1","editor-word-wrap":"true","fig-width":7,"fig-height":5,"editor-font-scale":"1","dpi":72,"out-width":"700px","context":"interactive"},"id":1},{"code":"set.seed(235711)\nmyVec <- sample(1:5)","options":{"fig-cap":"","autorun":"false","message":"true","editor-max-height":"","warning":"true","results":"markup","editor-quick-suggestions":"false","out-height":"","classes":"","output":"true","read-only":"false","comment":"","label":"unnamed-chunk-2","editor-word-wrap":"true","fig-width":7,"fig-height":5,"editor-font-scale":"1","dpi":72,"out-width":"700px","context":"interactive"},"id":2}];
 
 </script>
 <script type="module">
@@ -1658,19 +1658,6 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
-div.callout-going-further.callout {
-  border-left-color: #B58900;
-}
-div.callout-going-further.callout-style-default > .callout-header {
-  background-color: rgba(181, 137, 0, 0.13);
-}
-div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f4d7' !important;
-  background-image: none;
-}
 div.callout-completion-time.callout {
   border-left-color: gray;
 }
@@ -1682,45 +1669,6 @@ div.callout-completion-time.callout-style-default .callout-icon::before, div.cal
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f2f2' !important;
-  background-image: none;
-}
-div.callout-reading-advanced.callout {
-  border-left-color: red;
-}
-div.callout-reading-advanced.callout-style-default > .callout-header {
-  background-color: rgb(from red r g b / 13%);
-}
-div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
-div.callout-common-mistakes.callout {
-  border-left-color: #B01919;
-}
-div.callout-common-mistakes.callout-style-default > .callout-header {
-  background-color: rgba(176, 25, 25, 0.13);
-}
-div.callout-common-mistakes .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-common-mistakes.callout-style-default .callout-icon::before, div.callout-common-mistakes.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f188' !important;
-  background-image: none;
-}
-div.callout-knowledge-check.callout {
-  border-left-color: #368FFF;
-}
-div.callout-knowledge-check.callout-style-default > .callout-header {
-  background-color: rgba(54, 143, 255, 0.13);
-}
-div.callout-knowledge-check .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-knowledge-check.callout-style-default .callout-icon::before, div.callout-knowledge-check.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f044' !important;
   background-image: none;
 }
 div.callout-resource.callout {
@@ -1736,17 +1684,17 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '\f0c1' !important;
   background-image: none;
 }
-div.callout-reading.callout {
+div.callout-explanation.callout {
   border-left-color: violet;
 }
-div.callout-reading.callout-style-default > .callout-header {
+div.callout-explanation.callout-style-default > .callout-header {
   background-color: rgb(from violet r g b / 13%);
 }
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f518' !important;
+  content: '\f075' !important;
   background-image: none;
 }
 div.callout-practice.callout {
@@ -1762,17 +1710,69 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   content: '\f085' !important;
   background-image: none;
 }
-div.callout-explanation.callout {
-  border-left-color: violet;
+div.callout-common-mistakes.callout {
+  border-left-color: #B01919;
 }
-div.callout-explanation.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
+div.callout-common-mistakes.callout-style-default > .callout-header {
+  background-color: rgba(176, 25, 25, 0.13);
 }
-div.callout-explanation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-explanation.callout-style-default .callout-icon::before, div.callout-explanation.callout-titled .callout-icon::before {
+div.callout-common-mistakes .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-common-mistakes.callout-style-default .callout-icon::before, div.callout-common-mistakes.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f075' !important;
+  content: '\f188' !important;
+  background-image: none;
+}
+div.callout-reading.callout {
+  border-left-color: violet;
+}
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
+}
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
+div.callout-knowledge-check.callout {
+  border-left-color: #368FFF;
+}
+div.callout-knowledge-check.callout-style-default > .callout-header {
+  background-color: rgba(54, 143, 255, 0.13);
+}
+div.callout-knowledge-check .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-knowledge-check.callout-style-default .callout-icon::before, div.callout-knowledge-check.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f044' !important;
+  background-image: none;
+}
+div.callout-going-further.callout {
+  border-left-color: #B58900;
+}
+div.callout-going-further.callout-style-default > .callout-header {
+  background-color: rgba(181, 137, 0, 0.13);
+}
+div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f4d7' !important;
+  background-image: none;
+}
+div.callout-reading-advanced.callout {
+  border-left-color: red;
+}
+div.callout-reading-advanced.callout-style-default > .callout-header {
+  background-color: rgb(from red r g b / 13%);
+}
+div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -1904,7 +1904,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../tutorials/vectors/elements_selection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Subsetting Vectors</span></a>
+ <span class="menu-text">Manipulating Vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -3050,8 +3050,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../tutorials/vectors/elements_selection.html" class="pagination-link" aria-label="Subsetting Vectors">
-        <span class="nav-page-text">Subsetting Vectors</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../tutorials/vectors/elements_selection.html" class="pagination-link" aria-label="Manipulating Vectors">
+        <span class="nav-page-text">Manipulating Vectors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

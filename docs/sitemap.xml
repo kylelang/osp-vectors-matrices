@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/sub_matrix.html</loc>
-    <lastmod>2026-08-28T11:46:01.074Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/vector_operations.html</loc>
+    <lastmod>2026-08-28T15:29:45.077Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/matrix_vector_relation.html</loc>
-    <lastmod>2026-08-28T11:46:01.073Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/importance.html</loc>
+    <lastmod>2026-08-31T12:16:29.617Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/mode_coercion.html</loc>
-    <lastmod>2026-08-31T12:33:48.199Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/elements_selection.html</loc>
+    <lastmod>2026-08-31T16:16:49.168Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_selection.html</loc>
+    <lastmod>2026-08-31T15:48:10.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_creation.html</loc>
+    <lastmod>2026-08-31T13:17:43.988Z</lastmod>
   </url>
   <url>
     <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/recycling_concept.html</loc>
     <lastmod>2026-08-31T12:29:32.070Z</lastmod>
   </url>
   <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/mode_coercion.html</loc>
+    <lastmod>2026-08-31T12:33:48.199Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/index.html</loc>
     <lastmod>2026-08-31T12:34:20.405Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_selection.html</loc>
-    <lastmod>2026-08-28T11:46:01.088Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/matrix_vector_relation.html</loc>
+    <lastmod>2026-08-31T15:55:59.636Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_creation.html</loc>
-    <lastmod>2026-08-28T11:46:01.086Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/index.html</loc>
-    <lastmod>2026-08-28T12:13:59.135Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/vector_operations.html</loc>
-    <lastmod>2026-08-28T15:29:45.077Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/in_progress.html</loc>
-    <lastmod>2026-08-28T11:46:01.066Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/index.html</loc>
+    <lastmod>2026-08-31T15:50:12.102Z</lastmod>
   </url>
   <url>
     <loc>https://www.openstatprog.com/vectors-matrices/index.html</loc>
@@ -46,46 +46,46 @@
   </url>
   <url>
     <loc>https://www.openstatprog.com/vectors-matrices/conclusion.html</loc>
-    <lastmod>2026-08-17T12:20:22.894Z</lastmod>
+    <lastmod>2026-08-31T16:13:34.487Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/atomic_modes.html</loc>
-    <lastmod>2026-08-28T12:29:25.375Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/in_progress.html</loc>
+    <lastmod>2026-08-28T11:46:01.066Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/elements_selection.html</loc>
-    <lastmod>2026-08-28T16:53:02.731Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/create_matrix.html</loc>
+    <lastmod>2026-08-31T15:51:58.607Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/generating_vectors.html</loc>
-    <lastmod>2026-08-31T11:46:48.243Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/index.html</loc>
-    <lastmod>2026-08-28T11:46:01.085Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_operation.html</loc>
-    <lastmod>2026-08-28T11:46:01.087Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/multiplication.html</loc>
-    <lastmod>2026-08-31T12:39:41.956Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/sub_matrix.html</loc>
+    <lastmod>2026-08-31T15:52:53.465Z</lastmod>
   </url>
   <url>
     <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/generation.html</loc>
     <lastmod>2026-08-31T12:27:32.602Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/index.html</loc>
-    <lastmod>2026-08-28T11:46:01.071Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/vectors/questions/multiplication.html</loc>
+    <lastmod>2026-08-31T12:39:41.956Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/quizzes/matrices/questions/create_matrix.html</loc>
-    <lastmod>2026-08-28T11:46:01.073Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/index.html</loc>
+    <lastmod>2026-08-31T12:49:29.052Z</lastmod>
   </url>
   <url>
-    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/importance.html</loc>
-    <lastmod>2026-08-31T12:16:29.617Z</lastmod>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/matrices/matrix_operation.html</loc>
+    <lastmod>2026-08-31T13:46:37.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/atomic_modes.html</loc>
+    <lastmod>2026-08-28T12:29:25.375Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/generating_vectors.html</loc>
+    <lastmod>2026-08-31T11:46:48.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.openstatprog.com/vectors-matrices/tutorials/vectors/index.html</loc>
+    <lastmod>2026-08-31T16:15:17.543Z</lastmod>
   </url>
 </urlset>

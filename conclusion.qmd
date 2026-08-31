@@ -12,12 +12,7 @@ format:
 source(here::here("R", "buttons.R"))
 ```
 
-By completing this module, you've built a solid foundation in understanding two of R's most fundamental data
-structures:
-
-- Vectors
-- Matrices
-
+<!--
 ## Hand-In Assignment
 
 ::: practice
@@ -48,6 +43,9 @@ Save all of your commands, in the order you ran them, in a single plain-text or 
 A teacher reviewing your submission should be able to see: correct vector generation, a working (and correctly explained) recycling operation, correct conditional selection/modification, a correctly constructed matrix, and a clear explanation of the vector–matrix relationship in your own words.
 
 :::
+-->
+
+Congratulations! You've completed the **Vectors & Matrices** module.
 
 ## Learning Goals
 
@@ -55,20 +53,21 @@ Now that you've completed this module, you should be able to:
 
 ### Vectors
 
-1. Describe the characteristics of atomic vectors, and explain their fundamental role in the R data system.
+1. Describe the characteristics of atomic vectors.
 1. Describe the six atomic vector modes (logical, integer, double, character, complex, raw).
 1. Generate new atomic vectors using various functions.
-1. Perform element-wise arithmetic and logical operations on atomic vectors, and explain how recycling works.
+1. Perform element-wise arithmetic and logical operations on atomic vectors.
 1. Select and modify elements in a vector.
+1. Explain "recycling", and describe how it works when manipulating vectors.
 
 ### Matrices
 
-1. Describe the characteristics of an R matrix.
-1. Explain the relationship between matrices and vectors.
+1. Describe the characteristics of an R matrix. 
+1. Explain the relationship between matrices and vectors. 
 1. Create new matrices in R.
-1. Perform element-wise operations on matrices.
-1. Explain how recycling works with matrix operations.
+1. Perform element-wise operations on matrices. 
 1. Select and modify the elements of a matrix.
+1. Explain how recycling works with matrix operations. 
 
 ## Additional Reading
 
@@ -86,7 +85,9 @@ from Hadley Wickham's [Advanced R](https://adv-r.hadley.nz/index.html).
 
 ## Next Steps 
 
-Now that you have a solid grasp of vectors and matrices, you're ready to move on to other R data structures: lists and data frames, which let you work with mixed-type and tabular data.
+Now that you have a solid grasp of vectors and matrices, you're ready to learn about two very useful data structures:
+lists and data frames. These data types are central to any real-world R project because they can store let you store
+mixed-type, tabular data and arbitrary collections of R objects.
 
 ```{r}
 #| echo: false

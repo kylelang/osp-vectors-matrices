@@ -404,7 +404,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"c(2, 3, 5, 7, 11)","options":{"read-only":"false","label":"unnamed-chunk-1","fig-cap":"","output":"true","editor-max-height":"","context":"interactive","message":"true","dpi":72,"editor-font-scale":"1","fig-height":5,"results":"markup","editor-word-wrap":"true","autorun":"false","comment":"","out-height":"","classes":"","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","warning":"true"},"id":1},{"code":"","options":{"read-only":"false","label":"unnamed-chunk-2","fig-cap":"","output":"true","editor-max-height":"","context":"interactive","message":"true","dpi":72,"editor-font-scale":"1","fig-height":5,"results":"markup","editor-word-wrap":"true","autorun":"false","comment":"","out-height":"","classes":"","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","warning":"true"},"id":2},{"code":"rep(c(\"foo\", \"bar\"), 4)\nrep(c(TRUE, FALSE), each = 2)","options":{"read-only":"false","label":"unnamed-chunk-3","fig-cap":"","output":"true","editor-max-height":"","context":"interactive","message":"true","dpi":72,"editor-font-scale":"1","fig-height":5,"results":"markup","editor-word-wrap":"true","autorun":"false","comment":"","out-height":"","classes":"","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","warning":"true"},"id":3},{"code":"","options":{"read-only":"false","label":"unnamed-chunk-4","fig-cap":"","output":"true","editor-max-height":"","context":"interactive","message":"true","dpi":72,"editor-font-scale":"1","fig-height":5,"results":"markup","editor-word-wrap":"true","autorun":"false","comment":"","out-height":"","classes":"","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","warning":"true"},"id":4},{"code":"","options":{"read-only":"false","label":"unnamed-chunk-5","fig-cap":"","output":"true","editor-max-height":"","context":"interactive","message":"true","dpi":72,"editor-font-scale":"1","fig-height":5,"results":"markup","editor-word-wrap":"true","autorun":"false","comment":"","out-height":"","classes":"","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","warning":"true"},"id":5}];
+globalThis.qwebrCellDetails = [{"id":1,"code":"c(2, 3, 5, 7, 11)","options":{"output":"true","context":"interactive","editor-word-wrap":"true","message":"true","editor-font-scale":"1","classes":"","warning":"true","fig-height":5,"editor-quick-suggestions":"false","comment":"","fig-cap":"","label":"unnamed-chunk-1","autorun":"false","dpi":72,"fig-width":7,"results":"markup","out-width":"700px","out-height":"","editor-max-height":"","read-only":"false"}},{"id":2,"code":"","options":{"output":"true","context":"interactive","editor-word-wrap":"true","message":"true","editor-font-scale":"1","classes":"","warning":"true","fig-height":5,"editor-quick-suggestions":"false","comment":"","fig-cap":"","label":"unnamed-chunk-2","autorun":"false","dpi":72,"fig-width":7,"results":"markup","out-width":"700px","out-height":"","editor-max-height":"","read-only":"false"}},{"id":3,"code":"rep(c(\"foo\", \"bar\"), 4)\nrep(c(TRUE, FALSE), each = 2)","options":{"output":"true","context":"interactive","editor-word-wrap":"true","message":"true","editor-font-scale":"1","classes":"","warning":"true","fig-height":5,"editor-quick-suggestions":"false","comment":"","fig-cap":"","label":"unnamed-chunk-3","autorun":"false","dpi":72,"fig-width":7,"results":"markup","out-width":"700px","out-height":"","editor-max-height":"","read-only":"false"}},{"id":4,"code":"","options":{"output":"true","context":"interactive","editor-word-wrap":"true","message":"true","editor-font-scale":"1","classes":"","warning":"true","fig-height":5,"editor-quick-suggestions":"false","comment":"","fig-cap":"","label":"unnamed-chunk-4","autorun":"false","dpi":72,"fig-width":7,"results":"markup","out-width":"700px","out-height":"","editor-max-height":"","read-only":"false"}},{"id":5,"code":"","options":{"output":"true","context":"interactive","editor-word-wrap":"true","message":"true","editor-font-scale":"1","classes":"","warning":"true","fig-height":5,"editor-quick-suggestions":"false","comment":"","fig-cap":"","label":"unnamed-chunk-5","autorun":"false","dpi":72,"fig-width":7,"results":"markup","out-width":"700px","out-height":"","editor-max-height":"","read-only":"false"}}];
 
 </script>
 <script type="module">
@@ -1658,17 +1658,17 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
-div.callout-resource.callout {
-  border-left-color: orange;
+div.callout-reading.callout {
+  border-left-color: violet;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgb(from orange r g b / 13%);
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from violet r g b / 13%);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\f0c1' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-explanation.callout {
@@ -1682,58 +1682,6 @@ div.callout-explanation.callout-style-default .callout-icon::before, div.callout
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f075' !important;
-  background-image: none;
-}
-div.callout-common-mistakes.callout {
-  border-left-color: #B01919;
-}
-div.callout-common-mistakes.callout-style-default > .callout-header {
-  background-color: rgba(176, 25, 25, 0.13);
-}
-div.callout-common-mistakes .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-common-mistakes.callout-style-default .callout-icon::before, div.callout-common-mistakes.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f188' !important;
-  background-image: none;
-}
-div.callout-going-further.callout {
-  border-left-color: #B58900;
-}
-div.callout-going-further.callout-style-default > .callout-header {
-  background-color: rgba(181, 137, 0, 0.13);
-}
-div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f4d7' !important;
-  background-image: none;
-}
-div.callout-knowledge-check.callout {
-  border-left-color: #368FFF;
-}
-div.callout-knowledge-check.callout-style-default > .callout-header {
-  background-color: rgba(54, 143, 255, 0.13);
-}
-div.callout-knowledge-check .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-knowledge-check.callout-style-default .callout-icon::before, div.callout-knowledge-check.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f044' !important;
-  background-image: none;
-}
-div.callout-reading.callout {
-  border-left-color: violet;
-}
-div.callout-reading.callout-style-default > .callout-header {
-  background-color: rgb(from violet r g b / 13%);
-}
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f518' !important;
   background-image: none;
 }
 div.callout-reading-advanced.callout {
@@ -1762,6 +1710,19 @@ div.callout-completion-time.callout-style-default .callout-icon::before, div.cal
   content: '\f2f2' !important;
   background-image: none;
 }
+div.callout-going-further.callout {
+  border-left-color: #B58900;
+}
+div.callout-going-further.callout-style-default > .callout-header {
+  background-color: rgba(181, 137, 0, 0.13);
+}
+div.callout-going-further .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-going-further.callout-style-default .callout-icon::before, div.callout-going-further.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f4d7' !important;
+  background-image: none;
+}
 div.callout-practice.callout {
   border-left-color: green;
 }
@@ -1773,6 +1734,45 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f085' !important;
+  background-image: none;
+}
+div.callout-common-mistakes.callout {
+  border-left-color: #B01919;
+}
+div.callout-common-mistakes.callout-style-default > .callout-header {
+  background-color: rgba(176, 25, 25, 0.13);
+}
+div.callout-common-mistakes .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-common-mistakes.callout-style-default .callout-icon::before, div.callout-common-mistakes.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f188' !important;
+  background-image: none;
+}
+div.callout-knowledge-check.callout {
+  border-left-color: #368FFF;
+}
+div.callout-knowledge-check.callout-style-default > .callout-header {
+  background-color: rgba(54, 143, 255, 0.13);
+}
+div.callout-knowledge-check .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-knowledge-check.callout-style-default .callout-icon::before, div.callout-knowledge-check.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f044' !important;
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: orange;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgb(from orange r g b / 13%);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f0c1' !important;
   background-image: none;
 }
 </style>
@@ -1904,7 +1904,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../tutorials/vectors/elements_selection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Subsetting Vectors</span></a>
+ <span class="menu-text">Manipulating Vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
